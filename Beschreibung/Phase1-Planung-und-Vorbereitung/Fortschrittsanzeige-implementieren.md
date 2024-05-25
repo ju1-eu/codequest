@@ -4,7 +4,7 @@ Zuerst definieren wir die Struktur des JSON-Datensatzes, der den Fortschritt ein
 
 ```json
 {
-  "player_name": "John Doe",
+  "player_name": "Jan",
   "completed_levels": {
     "Python": [1, 2, 3],
     "C++": [4, 5, 6],
