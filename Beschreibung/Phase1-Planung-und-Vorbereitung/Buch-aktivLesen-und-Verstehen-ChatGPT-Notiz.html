@@ -1,0 +1,1476 @@
+<!DOCTYPE html><html><head>
+      <title>Buch-aktivLesen-und-Verstehen-ChatGPT-Notiz</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/jan/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.13/crossnote/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="buch-aktiv-lesen--verstehen---chat-gpt">Buch aktiv Lesen &amp; Verstehen - (Chat-GPT) </h1>
+<ul>
+<li>
+<p><strong>Arbeitsaufwand</strong>: aktiv Lesen &amp; Verstehen (40%) und Erklären/Wiederholen des Gelernten, Übungen durchführen (55%) und Vortrag halten (5%)</p>
+</li>
+<li>
+<p><strong>Schreibstil</strong> verwende einen sachlichen, präzisen und klaren Schreibstil ohne direkte Anrede mit einem formalen Ton und der Verwendung des Aktivs, wo immer es sinnvoll ist.</p>
+</li>
+<li>
+<p><strong>PDF - Merke</strong> Ich werde dir einen Text mit Abschnitten geben, merke sie dir einfach und verstehe die Struktur und Sinn dahinter. Hast du das verstanden? Merke dir den Inhalt, ich werde dir Fragen dazu stellen.</p>
+</li>
+<li>
+<p>Hast du Zugriff auf die PDF? Verschaffe mir einen <strong>Überblick</strong> (SQ3R-Methode)</p>
+</li>
+<li>
+<p><strong>SMART-Ziel und Kanban-Board</strong> (visualisiert in Tabelle) erstellen zum Thema: (beachte die PDF, Ziel: in ein bis zwei Wochen die PDF aktiv Lesen &amp; Verstehen (40%) und Erklären/Wiederholen des Gelernten, Übungen durchführen (55%) und Vortrag halten (5%))</p>
+</li>
+<li>
+<p><strong>Deadline und Roadmap mit Meilensteinen</strong> (visualisiert in Tabelle, Aufgabenverteilung nach Thema) erstellen zum Thema: (beachte die PDF)</p>
+</li>
+<li>
+<p><strong>Erklären der Schlüsselbegriffe (Feynman)</strong> (beachte die PDF) Was ist ? Wie funktioniert ?</p>
+</li>
+<li>
+<p><strong>Vortrag erstellen</strong> (2 Minuten) über das Thema. (beachte die PDF)</p>
+</li>
+<li>
+<p><strong>1. Zusammenfassung erstellen</strong> zum Thema: (beachte die PDF, Prinzipien: Klarheit und Prägnanz, Objektivität, Kohärenz und Logik, Eigenständige Formulierung)</p>
+<ul>
+<li>Titel/Thema, Quelle/Autor, Datum</li>
+<li>Motivation (Focus, Lernziel / Fragen)</li>
+<li>Inhalte durchdenken (3x wichtige Punkte)</li>
+<li>Strukturieren (MindMap)</li>
+</ul>
+</li>
+<li>
+<p><strong>2. Strukturierte Notizen erstellen (Keyfacts)</strong> zum Thema (beachte die PDF, Prinzipien: Klarheit und Prägnanz, Objektivität, Kohärenz und Logik, Eigenständige Formulierung)</p>
+<ul>
+<li>Titel/Thema, Quelle/Autor, Datum</li>
+<li>Fragen (Lernziel)</li>
+<li>Inhalte strukturieren (Einordnung in die Gliederung)</li>
+<li>Zusammenfassung / Keywords (Inhalte durchdenken, Rekapituliere)</li>
+<li>Verständnisprobleme</li>
+</ul>
+</li>
+<li>
+<p><strong>3. Lernkarten (Anki) erstellen</strong> zum Thema (beachte die PDF)</p>
+</li>
+<li>
+<p><strong>Übungsblatt erstellen</strong> zum Thema. (beachte die PDF)</p>
+</li>
+<li>
+<p><strong>Lösungen erstellen zum Übungsblatt</strong>:</p>
+<ul>
+<li>(Programmiersprachen: Python, C++, verwende deutsche Kommentare)</li>
+</ul>
+</li>
+<li>
+<p><strong>Erstelle eine Liste aller Programme / Algorithmen</strong> mit Algorithmische Problemlösung und Struktogramm (sinnvolle Programmnamen, Hinweise zur Programmausführung)</p>
+</li>
+<li>
+<p><strong>Formelsammlung erstellen</strong> zum Thema.</p>
+</li>
+<li>
+<p><strong>Lernsession planen:</strong> (Gedächtnistrainingstechniken in Kombination)</p>
+<ul>
+<li>Schritt: Beginne mit der Erstellung einer Mindmap des Themas.</li>
+<li>Schritt: Entwickle Eselsbrücken, die dir helfen, schwierige Informationen zu behalten.</li>
+<li>Schritt: Stell dir einen vertrauten Ort (Mein Galleriezimmer) vor und platziere dort visuell die zu merkenden Informationen.</li>
+<li>Schritt: Erstelle Karteikarten mit Fragen und Antworten zu den wichtigsten Punkten des Themas.</li>
+<li>Schritt: Verknüpfe neue Informationen mit deinem bestehenden Wissen, um ein tieferes Verständnis zu entwickeln.</li>
+<li>Schritt: Entwickle Geschichten, um schwierige Konzepte verständlicher zu machen.</li>
+<li>Schritt: Verwende Rätsel, um dein Wissen auf unterhaltsame Weise zu testen.</li>
+<li>Schritt: Erstelle Quizfragen, um dein Wissen zu überprüfen.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fachbuch bearbeiten und verstehen</strong></p>
+<ol>
+<li><strong>Vorbereitung:</strong> Setze klare Ziele und verschaffe dir einen Überblick über das Buch. (Inhaltsverzeichnis und Einleitung)</li>
+<li><strong>Aktives Lesen:</strong> Stelle Fragen zu jedem Kapitel, markiere wichtige Passagen und schreibe Zusammenfassungen.</li>
+<li><strong>Wiederholung und Vertiefung:</strong> Wiederhole regelmäßig und beantworte deine Fragen, um das Gelernte zu festigen. Verbindungen herstellen zwischen verschiedenen Kapiteln oder Themen (Zusammenhänge)</li>
+<li><strong>Anwendung:</strong> Bearbeite Übungen und entwickle eigene Beispiele.</li>
+<li><strong>Austausch:</strong> Diskutiere das Gelesene mit anderen.</li>
+<li><strong>Ressourcen nutzen:</strong> Verwende zusätzliche Hilfsmittel wie Zusammenfassungen, Lernvideos und visuelle Darstellungen. (Mindmaps und Diagramme)</li>
+</ol>
+</li>
+</ul>
+<h2 id="fachbuch-bearbeiten-und-verstehen">Fachbuch bearbeiten und verstehen </h2>
+<h3 id="1-vorbereitung-und-grundlagen">1. Vorbereitung und Grundlagen </h3>
+<ul>
+<li>
+<p><strong>Zielsetzung:</strong></p>
+<ul>
+<li>Definiere klar, was du aus dem Buch lernen oder verstehen möchtest.</li>
+</ul>
+</li>
+<li>
+<p><strong>Überblick verschaffen:</strong></p>
+<ul>
+<li>Lies das Inhaltsverzeichnis und die Einleitung, um einen Überblick über die Struktur und die Hauptthemen des Buches zu bekommen.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-aktives-lesen">2. Aktives Lesen </h3>
+<ul>
+<li>
+<p><strong>Fragen stellen:</strong></p>
+<ul>
+<li>Formuliere Fragen zu jedem Kapitel oder Abschnitt, bevor du mit dem Lesen beginnst. Das hilft, fokussiert zu bleiben.</li>
+</ul>
+</li>
+<li>
+<p><strong>Kapitel lesen:</strong></p>
+<ul>
+<li>Lies ein Kapitel oder einen Abschnitt und markiere wichtige Absätze.</li>
+<li>Mache Randnotizen zu wichtigen Konzepten, Definitionen und Beispielen.</li>
+</ul>
+</li>
+<li>
+<p><strong>Zusammenfassung schreiben:</strong></p>
+<ul>
+<li>Am Ende jedes Kapitels oder Abschnitts schreibe eine kurze Zusammenfassung der wichtigsten Punkte.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-wiederholung-und-vertiefung">3. Wiederholung und Vertiefung </h3>
+<ul>
+<li>
+<p><strong>Regelmäßige Wiederholungen:</strong></p>
+<ul>
+<li>Gehe regelmäßig die gelesenen Kapitel noch einmal durch, um das Gelernte im Gedächtnis zu verankern.</li>
+</ul>
+</li>
+<li>
+<p><strong>Fragen beantworten:</strong></p>
+<ul>
+<li>Beantworte die zu Beginn formulierten Fragen anhand des Gelesenen.</li>
+</ul>
+</li>
+<li>
+<p><strong>Verbindungen herstellen:</strong></p>
+<ul>
+<li>Stelle Verbindungen zwischen verschiedenen Kapiteln oder Themen her, um komplexe Zusammenhänge besser zu verstehen.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-praktische-anwendung">4. Praktische Anwendung </h3>
+<ul>
+<li>
+<p><strong>Übungen und Beispiele:</strong></p>
+<ul>
+<li>Bearbeite alle Übungen im Buch und schaue dir Beispiele genau an.</li>
+</ul>
+</li>
+<li>
+<p><strong>Eigene Beispiele entwickeln:</strong></p>
+<ul>
+<li>Entwickle eigene Beispiele oder Anwendungsfälle, um das Gelernte zu festigen.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-diskussion-und-austausch">5. Diskussion und Austausch </h3>
+<ul>
+<li><strong>Diskussion:</strong>
+<ul>
+<li>Sprich mit anderen über die Themen, die du lernst. Diskussionen können helfen, das Verständnis zu vertiefen und neue Perspektiven zu gewinnen.</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-hilfsmittel-und-ressourcen-nutzen">6. Hilfsmittel und Ressourcen nutzen </h3>
+<ul>
+<li>
+<p><strong>Zusammenfassungen und Online-Ressourcen:</strong></p>
+<ul>
+<li>Nutze Zusammenfassungen, Lernvideos, um schwierige Konzepte besser zu verstehen.</li>
+</ul>
+</li>
+<li>
+<p><strong>Mindmaps und Diagramme:</strong></p>
+<ul>
+<li>Erstelle visuelle Darstellungen der Informationen, um sie besser zu verinnerlichen.</li>
+</ul>
+</li>
+</ul>
+<h2 id="schritte-zum-schreiben-einer-guten-zusammenfassung">Schritte zum Schreiben einer guten Zusammenfassung </h2>
+<ul>
+<li>Erstelle eine <strong>gute Zusammenfassung</strong> zum Thema. (beachte die PDF)</li>
+</ul>
+<ol>
+<li>
+<p><strong>Lesen und Verstehen</strong></p>
+<ul>
+<li>Lies den Originaltext gründlich, um ein umfassendes Verständnis zu erlangen.</li>
+<li>Identifiziere den Zweck und die Hauptaussagen des Textes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Hauptpunkte und Schlüsselbegriffe identifizieren</strong></p>
+<ul>
+<li>Markiere die Hauptpunkte und Schlüsselbegriffe im Text.</li>
+<li>Notiere wichtige Daten, Fakten und Argumente.</li>
+</ul>
+</li>
+<li>
+<p><strong>Gliederung erstellen</strong></p>
+<ul>
+<li>Erstelle eine Gliederung, die die Hauptpunkte in logischer Reihenfolge zusammenfasst.</li>
+<li>Berücksichtige die Struktur des Originaltextes (Einleitung, Hauptteil, Schluss).</li>
+</ul>
+</li>
+<li>
+<p><strong>Schreiben der Zusammenfassung</strong></p>
+<ul>
+<li>Beginne mit einer Einleitung, die den Titel, den Autor und den Zweck des Originaltextes nennt.</li>
+<li>Fasse die Hauptpunkte in eigenen Worten zusammen. Vermeide direkte Zitate.</li>
+<li>Halte die Zusammenfassung kurz und prägnant. Fokussiere auf das Wesentliche.</li>
+</ul>
+</li>
+<li>
+<p><strong>Überprüfen und Bearbeiten</strong></p>
+<ul>
+<li>Lies die Zusammenfassung durch und überprüfe sie auf Vollständigkeit und Klarheit.</li>
+<li>Achte darauf, dass die Zusammenfassung objektiv und frei von persönlichen Meinungen ist.</li>
+<li>Korrigiere sprachliche Fehler und stelle sicher, dass die Zusammenfassung gut strukturiert ist.</li>
+</ul>
+</li>
+</ol>
+<h3 id="prinzipien-einer-guten-zusammenfassung">Prinzipien einer guten Zusammenfassung </h3>
+<ol>
+<li>
+<p><strong>Klarheit und Prägnanz</strong></p>
+<ul>
+<li>Vermeide unnötige Details und konzentriere dich auf die Hauptpunkte.</li>
+<li>Schreibe in klaren, verständlichen Sätzen.</li>
+</ul>
+</li>
+<li>
+<p><strong>Objektivität</strong></p>
+<ul>
+<li>Stelle die Informationen neutral dar, ohne persönliche Meinungen oder Interpretationen.</li>
+<li>Vermeide subjektive Aussagen und wertende Sprache.</li>
+</ul>
+</li>
+<li>
+<p><strong>Kohärenz und Logik</strong></p>
+<ul>
+<li>Stelle sicher, dass die Zusammenfassung logisch aufgebaut ist und die Ideen klar verbunden sind.</li>
+<li>Verwende Übergänge, um die Verbindung zwischen den Hauptpunkten zu verdeutlichen.</li>
+</ul>
+</li>
+<li>
+<p><strong>Eigenständige Formulierung</strong></p>
+<ul>
+<li>Schreibe die Zusammenfassung in eigenen Worten und vermeide es, Textpassagen direkt zu kopieren.</li>
+<li>Stelle sicher, dass die Zusammenfassung den Sinn des Originaltextes korrekt wiedergibt.</li>
+</ul>
+</li>
+</ol>
+<h2 id="lernstrategien">Lernstrategien </h2>
+<ol>
+<li>
+<p><strong>Feynman-Methode:</strong></p>
+<ul>
+<li><strong>Erkläre es in einfachen Worten:</strong> Beschreibe das Konzept so, als würdest du es jemandem ohne Vorkenntnisse erklären.</li>
+<li><strong>Überprüfe dein Verständnis:</strong> Gehe durch das Konzept und prüfe, ob du es wirklich verstanden hast.</li>
+<li><strong>Identifiziere die Lücken:</strong> Erkenne, welche Teile des Konzepts du noch nicht vollständig verstehst, und arbeite daran, diese Lücken zu schließen.</li>
+<li><strong>Überarbeite und vereinfache:</strong> Verbessere deine Erklärung und mache sie noch klarer und einfacher.</li>
+</ul>
+</li>
+<li>
+<p><strong>SQ3R-Methode (Survey, Question, Read, Recite, Review):</strong></p>
+<ul>
+<li><strong>Survey (Überblick):</strong> Verschaffe dir einen Überblick über den Text.</li>
+<li><strong>Question (Fragen):</strong> Stelle Fragen zum Textinhalt.</li>
+<li><strong>Read (Lesen):</strong> Lies den Text aufmerksam durch.</li>
+<li><strong>Recite (Wiedergeben):</strong> Gib das Gelesene in eigenen Worten wieder.</li>
+<li><strong>Review (Überprüfen):</strong> Wiederhole und überprüfe den Lernstoff regelmäßig.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pomodoro-Technik:</strong></p>
+<ul>
+<li>Arbeite in kurzen, intensiven Zeitblöcken (z.B. 25 Minuten), gefolgt von kurzen Pausen (5 Minuten). Nach vier Blöcken folgt eine längere Pause (15-30 Minuten).</li>
+</ul>
+</li>
+<li>
+<p><strong>Mind Mapping:</strong></p>
+<ul>
+<li>Visualisiere Informationen und ihre Zusammenhänge in einer Mindmap, um komplexe Themen besser zu verstehen und zu strukturieren.</li>
+</ul>
+</li>
+<li>
+<p><strong>Lernkarten - Spaced Repetition (Verteiltes Lernen, Anki):</strong></p>
+<ul>
+<li>Verteile das Lernen über längere Zeiträume und wiederhole die Lerninhalte in zunehmenden Abständen, um das Langzeitgedächtnis zu stärken.</li>
+</ul>
+</li>
+</ol>
+<h2 id="gesamtüberblick-über-das-studium">Gesamtüberblick über das Studium </h2>
+<p>Beachte den <strong>Semesterplan</strong> (Gesamtüberblick, Modulhandbuch, Prüfung-Kernthemen, Klausurtermine, Semesterplans, Wochen- und Tagespläne)</p>
+<ul>
+<li>Helfe mir bei der <strong>Klausurplanung</strong> für das 1. Semester
+<ul>
+<li>Datum heute: 18.5.24 (Start 1. Semester)</li>
+<li>Klausurtermine: 15.6, 3.8, 14.9, 26.10, 7.12
+<ul>
+<li>Anmeldezeiträume: 8 bis 5 Wochen vor dem Termin</li>
+</ul>
+</li>
+<li>Beachte die CP (Arbeitsaufwand)</li>
+<li>Beachte: letzter Monat vor Prüfung nur noch Prüfungsvorbereitung / Wiederholen</li>
+<li>Lesen &amp; Verstehen und Übungen pro Lerneinheit</li>
+<li>Es können bis zu 2 Klausuren pro Termin geschrieben werden, obwohl 1 Klausur pro Termin in der Regelstudienzeit ausreicht.</li>
+<li>Fernstudium 20h/Woche (Mittwoch und Samstag frei, Mo/Di/Do/Fr 3,5h und Sonntag 6h)</li>
+<li>passe Wochenplan (20 Stunden/Woche) an wenn Prüfung abgeschlossen</li>
+</ul>
+</li>
+<li>Erstelle mir einen <strong>Semesterplan und Wochenplan und Tagesplan</strong></li>
+</ul>
+<h3 id="studienziel">Studienziel </h3>
+<p>Bachelor of Engineering (B.Eng.) Fahrzeugtechnik</p>
+<h3 id="studiendauer">Studiendauer </h3>
+<p>42 Monate (Start: 13. Mai 2024)</p>
+<h3 id="arbeitsaufwand-pro-credit-point-cp">Arbeitsaufwand pro Credit Point (CP) </h3>
+<p>1 CP entspricht 25-30 Stunden Arbeitsaufwand</p>
+<h3 id="gesamtstruktur-und-credit-points-cp">Gesamtstruktur und Credit Points (CP) </h3>
+<h4 id="1-semester-30-cp">1. Semester (30 CP) </h4>
+<ul>
+<li>Mathematik I (6 CP)</li>
+<li>Grundlagen der Informatik (6 CP)</li>
+<li>Naturwissenschaftliche Grundlagen (6 CP)</li>
+<li>Einführung Ingenieurpraxis (6 CP)</li>
+<li>Grundl. BWL und rechtl. Grundlagen (6 CP)</li>
+</ul>
+<h4 id="2-semester-30-cp">2. Semester (30 CP) </h4>
+<ul>
+<li>Mathematik II (6 CP)</li>
+<li>Naturwissenschaftliche Grundlagen II (6 CP)</li>
+<li>Kommunikation und Management (6 CP)
+<ul>
+<li>Kommunikation und Management</li>
+<li>Wahlpflichtbereich Sprache: Technisches Englisch</li>
+<li>Wahlpflichtbereich Management: Finanzierung und Investition</li>
+</ul>
+</li>
+<li>Einführung in die Elektrotechnik (6 CP)</li>
+<li>Technische Mechanik I (6 CP)</li>
+</ul>
+<h4 id="3-semester-30-cp">3. Semester (30 CP) </h4>
+<ul>
+<li>Mathematik III (6 CP)</li>
+<li>Mess- und Regelungstechnik (6 CP)</li>
+<li>Werkstofftechnik (6 CP)</li>
+<li>Technische Mechanik II (6 CP)</li>
+<li>Fluidmechanik (6 CP)</li>
+</ul>
+<h4 id="4-semester-30-cp">4. Semester (30 CP) </h4>
+<ul>
+<li>Technische Thermodynamik (6 CP)</li>
+<li>Maschinenelemente I (6 CP)</li>
+<li>Konstruktionslehre (6 CP)</li>
+<li>Fahrzeugaufbau und -konstruktion (6 CP)</li>
+<li>Fahrzeugdynamik mit Labor (6 CP)</li>
+</ul>
+<h4 id="5-semester-30-cp">5. Semester (30 CP) </h4>
+<ul>
+<li>Maschinenelemente II (6 CP)</li>
+<li>Computer Aided Engineering (6 CP)</li>
+<li>Fertigungstechnik mit Labor (6 CP)</li>
+<li>Fahrzeugantriebe mit Labor (6 CP)</li>
+<li>Berufspraktische Phase (6 CP)</li>
+</ul>
+<h4 id="6-semester-30-cp">6. Semester (30 CP) </h4>
+<ul>
+<li>Grundlagen Fahrzeugelektronik (6 CP)</li>
+<li>Berufspraktische Phase (6 CP)</li>
+<li>Vertiefungsrichtung: Allgemeine Fahrzeugtechnik (18 CP)
+<ul>
+<li>Getriebetechnik (6 CP)</li>
+<li>Systems Engineering (6 CP)</li>
+<li>Verbrennungskraftmaschine (6 CP)</li>
+</ul>
+</li>
+</ul>
+<h4 id="7-semester-30-cp">7. Semester (30 CP) </h4>
+<ul>
+<li>Ingenieurwissenschaftliches Projekt (6 CP)</li>
+<li>Vertiefungsrichtung: Allgemeine Fahrzeugtechnik (12 CP)
+<ul>
+<li>Wahlpflichtmodul 1: Sensorik und Aktorik in Kraftfahrzeugen (6 CP)</li>
+<li>Wahlpflichtmodul 2: Elektrische und hybride Antriebe (6 CP)</li>
+</ul>
+</li>
+<li>Bachelorarbeit (Thesis) und Kolloquium (mündliche Prüfung) (12 CP)</li>
+</ul>
+<h3 id="gesamt-credit-points-210-cp">Gesamt-Credit Points: 210 CP </h3>
+<h3 id="gesamtarbeitsaufwand">Gesamtarbeitsaufwand </h3>
+<ul>
+<li>Minimum: 210 CP x 25 Stunden = 5250 Stunden</li>
+<li>Maximum: 210 CP x 30 Stunden = 6300 Stunden</li>
+</ul>
+<h3 id="zusammenfassung">Zusammenfassung </h3>
+<p>Das Studium umfasst insgesamt 42 Monate und ist in 7 Semester aufgeteilt. Jedes Semester besteht aus verschiedenen Modulen, die zusammen 30 Credit Points (CP) ergeben. Der Arbeitsaufwand pro CP liegt zwischen 25 und 30 Stunden. Am Ende des Studiums wird der akademische Grad Bachelor of Engineering (B.Eng.) in Fahrzeugtechnik verliehen.</p>
+<h2 id="wichtige-informationen-zu-präsenzklausuren-stand-24042024">Wichtige Informationen zu Präsenzklausuren (Stand: 24.04.2024) </h2>
+<h3 id="allgemeine-hinweise">Allgemeine Hinweise </h3>
+<ul>
+<li>Präsenzklausuren finden nur an festgelegten Prüfungsstandorten statt.</li>
+<li>Zugelassene Hilfsmittel sind individuell je Klausur festgelegt und müssen selbst mitgebracht werden.</li>
+<li>Klausurpapier wird vor Ort gestellt und es darf nur dieses verwendet werden.</li>
+<li>Studenten müssen einen gültigen Studien- und Lichtbildausweis vorlegen.</li>
+</ul>
+<h3 id="prüfungsstandorte-und-anfahrt">Prüfungsstandorte und Anfahrt </h3>
+<ul>
+<li>Die Adressen der Prüfungsstandorte sowie Anfahrtsskizzen sind im OnlineCampus verfügbar</li>
+</ul>
+<h3 id="buchung-von-präsenzklausuren">Buchung von Präsenzklausuren </h3>
+<ul>
+<li>Klausurtermine sind ca. 8 Wochen vor dem Termin buchbar; die Buchung endet 5 Wochen vor dem Termin.</li>
+<li>Die genauen Daten werden im Online-Campus unter News bekanntgegeben.</li>
+<li>Anmeldeschritte:
+<ul>
+<li><strong>1.</strong> Studiengangsübersicht im Modulfilter nach dem entsprechenden Modul filtern.</li>
+<li><strong>2.</strong> Auf das Klausur-Element (endet auf PS = Prüfung schriftlich) klicken.</li>
+<li><strong>3.</strong> Den Button „Anmeldung zur Prüfung bzw. Seminar“ nutzen und dem Buchungsmenü folgen.</li>
+<li><strong>4.</strong> Gewünschten Standort auswählen und Buchungsmenü abschließen.</li>
+</ul>
+</li>
+<li>Die Anmeldung ist erst nach Erhalt einer Anmeldebestätigung per E-Mail wirksam.</li>
+</ul>
+<h3 id="anzahl-der-klausuren-und-zeitplanung">Anzahl der Klausuren und Zeitplanung </h3>
+<ul>
+<li>Es können bis zu 2 Klausuren pro Termin geschrieben werden, obwohl 1 Klausur pro Termin in der Regelstudienzeit ausreicht.</li>
+<li>Zwei Klausurzeiten werden angeboten: 10:00 Uhr und 12:30 Uhr.</li>
+<li>Der genaue Stundenplan wird nach Anmeldefrist erstellt und 10 Tage vor dem Termin im Online-Campus veröffentlicht, um sicherzustellen, dass alle gebuchten Klausuren geschrieben werden können.</li>
+</ul>
+<h3 id="abschluss">Abschluss </h3>
+<ul>
+<li>Studierende sollten die FAQ speichern oder ausdrucken, um jederzeit offline darauf zugreifen zu können.</li>
+<li>Weitere Fragen und Antworten werden sukzessive ergänzt, Neuigkeiten sind gelb markiert.</li>
+</ul>
+<h2 id="klausurtermine-2024">Klausurtermine 2024 </h2>
+<h3 id="verfügbare-klausurtermine">Verfügbare Klausurtermine </h3>
+<ul>
+<li><strong>10.</strong>  Februar 2024</li>
+<li><strong>16.</strong>  März 2024</li>
+<li><strong>4.</strong> Mai 2024</li>
+<li><strong>15.</strong>  Juni 2024</li>
+<li><strong>3.</strong> August 2024</li>
+<li><strong>14.</strong>  September 2024</li>
+<li><strong>26.</strong>  Oktober 2024</li>
+<li><strong>7.</strong> Dezember 2024</li>
+</ul>
+<h3 id="heutiges-datum">Heutiges Datum </h3>
+<ul>
+<li><strong>18.</strong> Mai 2024</li>
+</ul>
+<h3 id="nächste-klausurtermine">Nächste Klausurtermine </h3>
+<p>Die kommenden Klausurtermine nach dem heutigen Datum sind:</p>
+<ul>
+<li><strong>15.</strong>  Juni 2024</li>
+<li><strong>3.</strong> August 2024</li>
+<li><strong>14.</strong>  September 2024</li>
+<li><strong>26.</strong>  Oktober 2024</li>
+<li><strong>7.</strong> Dezember 2024</li>
+</ul>
+<h3 id="anmeldezeiträume">Anmeldezeiträume </h3>
+<ul>
+<li><strong>3. August 2024:</strong> Anmeldezeitraum ca. vom 8. Juni bis 29. Juni 2024</li>
+<li><strong>14. September 2024:</strong> Anmeldezeitraum ca. vom 20. Juli bis 10. August 2024</li>
+<li><strong>26. Oktober 2024:</strong> Anmeldezeitraum ca. vom 31. August bis 21. September 2024</li>
+<li><strong>7. Dezember 2024:</strong> Anmeldezeitraum ca. vom 12. Oktober bis 2. November 2024</li>
+</ul>
+<h2 id="semesterplan-für-das-1semester">Semesterplan für das 1.Semester </h2>
+<h3 id="module-des-1-semesters-30-cp">Module des 1. Semesters (30 CP) </h3>
+<ol>
+<li><strong>Mathematik I (6 CP)</strong></li>
+<li><strong>Grundlagen der Informatik (6 CP)</strong></li>
+<li><strong>Naturwissenschaftliche Grundlagen (6 CP)</strong></li>
+<li><strong>Einführung Ingenieurpraxis, Grundlagen Matlab, Programmieren in C/C++ (6 CP)</strong></li>
+<li><strong>Grundlagen der Betriebswirtschaft und rechtliche Grundlagen (6 CP)</strong></li>
+</ol>
+<h3 id="gesamtplanung">Gesamtplanung </h3>
+<h3 id="klausurtermine--module">Klausurtermine &amp; Module </h3>
+<ol>
+<li><strong>3. August 2024</strong>
+<ul>
+<li>Grundlagen der Informatik</li>
+</ul>
+</li>
+<li><strong>14. September 2024</strong>
+<ul>
+<li>Mathematik I</li>
+<li>Naturwissenschaftliche Grundlagen</li>
+</ul>
+</li>
+<li><strong>26. Oktober 2024</strong>
+<ul>
+<li>Grundlagen der Betriebswirtschaft und rechtliche Grundlagen</li>
+</ul>
+</li>
+<li><strong>7. Dezember 2024</strong>
+<ul>
+<li>Einführung Ingenieurpraxis, Grundlagen Matlab, Programmieren in C/C++</li>
+</ul>
+</li>
+</ol>
+<h3 id="anmeldezeiträume-2024">Anmeldezeiträume 2024 </h3>
+<ul>
+<li><strong>3. August 2024:</strong> 8. Juni bis 29. Juni 2024</li>
+<li><strong>14. September 2024:</strong> 20. Juli bis 10. August 2024</li>
+<li><strong>26. Oktober 2024:</strong> 31. August bis 21. September 2024</li>
+<li><strong>7. Dezember 2024:</strong> 12. Oktober bis 2. November 2024</li>
+</ul>
+<h3 id="arbeitsaufwand-pro-modul-summe-180-std-pro-modul">Arbeitsaufwand pro Modul (Summe 180 Std. pro Modul) </h3>
+<table>
+<thead>
+<tr>
+<th>Modul</th>
+<th>Lesen und Verstehen (Std.)</th>
+<th>Übungen und Selbststudium (Std.)</th>
+<th>Prüfungsvorbereitung (Std.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Einführung Ingenieurpraxis, Grundlagen Matlab, Programmieren in C/C++ (6 CP)</td>
+<td>72</td>
+<td>99</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Grundlagen der Betriebswirtschaft und rechtliche Grundlagen (6 CP)</td>
+<td>108</td>
+<td>54</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Grundlagen der Informatik (6 CP)</td>
+<td>99</td>
+<td>72</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Mathematik I (6 CP)</td>
+<td>72</td>
+<td>99</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Naturwissenschaftliche Grundlagen (6 CP)</td>
+<td>99</td>
+<td>72</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="verteilung-der-arbeitsstunden-für-module">Verteilung der Arbeitsstunden für Module </h3>
+<ul>
+<li><strong>Lesen und Verstehen:</strong> 1 Monat vor dem Klausurtermin abgeschlossen</li>
+<li><strong>Übungen und Selbststudium:</strong> 1 Monat vor dem Klausurtermin abgeschlossen</li>
+<li><strong>Prüfungsvorbereitung:</strong> letzter Monat vor dem Klausurtermin</li>
+</ul>
+<h2 id="berechnung-der-stunden-und-prüfung-der-plausibilität">Berechnung der Stunden und Prüfung der Plausibilität </h2>
+<h3 id="grundlagen-der-informatik">Grundlagen der Informatik </h3>
+<ul>
+<li>
+<p><strong>Lesen und Verstehen (99 Stunden):</strong> Mai - Juni 2024 (Urlaub im Juni)</p>
+<ul>
+<li>Mai: 20h * 4 Wochen = 80 Stunden</li>
+<li>Juni: 20h - (3 Wochen Urlaub) = 20 Stunden</li>
+<li>Gesamt: 80 + 20 = 100 Stunden (99 Stunden benötigt)</li>
+</ul>
+</li>
+<li>
+<p><strong>Übungen und Selbststudium (72 Stunden):</strong> Juli 2024</p>
+<ul>
+<li>Juli: 20h * 4 Wochen = 80 Stunden (72 Stunden benötigt)</li>
+</ul>
+</li>
+<li>
+<p><strong>Prüfungsvorbereitung (9 Stunden):</strong> Letzte Woche Juli 2024</p>
+<ul>
+<li>Juli: Letzte Woche, 20h, davon 9 Stunden Prüfungsvorbereitung</li>
+</ul>
+</li>
+<li>
+<p><strong>Klausur:</strong> 3. August 2024</p>
+</li>
+</ul>
+<h3 id="mathematik-i">Mathematik I </h3>
+<ul>
+<li>
+<p><strong>Lesen und Verstehen (72 Stunden):</strong> Mai - Juni 2024 (Urlaub im Juni)</p>
+<ul>
+<li>Mai: 20h * 4 Wochen = 80 Stunden</li>
+<li>Juni: 20h - (3 Wochen Urlaub) = 20 Stunden</li>
+<li>Gesamt: 80 + 20 = 100 Stunden (72 Stunden benötigt)</li>
+</ul>
+</li>
+<li>
+<p><strong>Übungen und Selbststudium (99 Stunden):</strong> Juli - August 2024</p>
+<ul>
+<li>Juli: 20h * 4 Wochen = 80 Stunden</li>
+<li>August: 20h * 2 Wochen = 40 Stunden</li>
+<li>Gesamt: 80 + 40 = 120 Stunden (99 Stunden benötigt)</li>
+</ul>
+</li>
+<li>
+<p><strong>Prüfungsvorbereitung (9 Stunden):</strong> Letzte Woche August 2024</p>
+<ul>
+<li>August: Letzte Woche, 20h, davon 9 Stunden Prüfungsvorbereitung</li>
+</ul>
+</li>
+<li>
+<p><strong>Klausur:</strong> 14. September 2024</p>
+</li>
+</ul>
+<h3 id="naturwissenschaftliche-grundlagen">Naturwissenschaftliche Grundlagen </h3>
+<ul>
+<li>
+<p><strong>Lesen und Verstehen (99 Stunden):</strong> Juni - Juli 2024 (Urlaub im Juni)</p>
+<ul>
+<li>Juni: 20h - (3 Wochen Urlaub) = 20 Stunden</li>
+<li>Juli: 20h * 4 Wochen = 80 Stunden</li>
+<li>Gesamt: 20 + 80 = 100 Stunden (99 Stunden benötigt)</li>
+</ul>
+</li>
+<li>
+<p><strong>Übungen und Selbststudium (72 Stunden):</strong> August 2024</p>
+<ul>
+<li>August: 20h * 4 Wochen = 80 Stunden (72 Stunden benötigt)</li>
+</ul>
+</li>
+<li>
+<p><strong>Prüfungsvorbereitung (9 Stunden):</strong> Letzte Woche August 2024</p>
+<ul>
+<li>August: Letzte Woche, 20h, davon 9 Stunden Prüfungsvorbereitung</li>
+</ul>
+</li>
+<li>
+<p><strong>Klausur:</strong> 14. September 2024</p>
+</li>
+</ul>
+<h3 id="grundlagen-der-betriebswirtschaft">Grundlagen der Betriebswirtschaft </h3>
+<ul>
+<li>
+<p><strong>Lesen und Verstehen (108 Stunden):</strong> Juli - August 2024</p>
+<ul>
+<li>Juli: 20h * 4 Wochen = 80 Stunden</li>
+<li>August: 20h * 4 Wochen = 80 Stunden</li>
+<li>Gesamt: 80 + 80 = 160 Stunden (108 Stunden benötigt)</li>
+</ul>
+</li>
+<li>
+<p><strong>Übungen und Selbststudium (54 Stunden):</strong> September - Oktober 2024</p>
+<ul>
+<li>September: 20h * 4 Wochen = 80 Stunden</li>
+<li>Oktober: 20h * 4 Wochen = 80 Stunden</li>
+<li>Gesamt: 80 + 80 = 160 Stunden (54 Stunden benötigt)</li>
+</ul>
+</li>
+<li>
+<p><strong>Prüfungsvorbereitung (18 Stunden):</strong> Letzte Woche Oktober 2024</p>
+<ul>
+<li>Oktober: Letzte Woche, 20h, davon 18 Stunden Prüfungsvorbereitung</li>
+</ul>
+</li>
+<li>
+<p><strong>Klausur:</strong> 26. Oktober 2024</p>
+</li>
+</ul>
+<h3 id="einführung-ingenieurpraxis-matlab-cc">Einführung Ingenieurpraxis, Matlab, C/C++ </h3>
+<ul>
+<li>
+<p><strong>Lesen und Verstehen (72 Stunden):</strong> August - September 2024</p>
+<ul>
+<li>August: 20h * 4 Wochen = 80 Stunden</li>
+<li>September: 20h * 4 Wochen = 80 Stunden</li>
+<li>Gesamt: 80 + 80 = 160 Stunden (72 Stunden benötigt)</li>
+</ul>
+</li>
+<li>
+<p><strong>Übungen und Selbststudium (99 Stunden):</strong> Oktober - November 2024</p>
+<ul>
+<li>Oktober: 20h * 4 Wochen = 80 Stunden</li>
+<li>November: 20h * 4 Wochen = 80 Stunden</li>
+<li>Gesamt: 80 + 80 = 160 Stunden (99 Stunden benötigt)</li>
+</ul>
+</li>
+<li>
+<p><strong>Prüfungsvorbereitung (9 Stunden):</strong> Letzte Woche November 2024</p>
+<ul>
+<li>November: Letzte Woche, 20h, davon 9 Stunden Prüfungsvorbereitung</li>
+</ul>
+</li>
+<li>
+<p><strong>Klausur:</strong> 7. Dezember 2024</p>
+</li>
+</ul>
+<h3 id="plausibilitätsprüfung">Plausibilitätsprüfung </h3>
+<ul>
+<li>Die Lernzeit von 20 Stunden pro Woche reicht aus, um den Arbeitsaufwand für alle Module bis zu den Klausurterminen zu bewältigen.</li>
+<li>Alle Module werden parallel begonnen, aber die Intensität und der Fokus verschieben sich im Laufe des Semesters entsprechend den anstehenden Klausuren.</li>
+<li>Nach jeder Klausur fällt das entsprechende Modul weg, was Platz für die Vorbereitung und Bearbeitung der verbleibenden Module schafft.</li>
+</ul>
+<h3 id="wochenplan-20-stundenwoche">Wochenplan (20 Stunden/Woche) </h3>
+<h4 id="mai-2024-start">Mai 2024 (Start) </h4>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Zeit</th>
+<th>Aktivität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Montag</td>
+<td>17:00 - 20:30</td>
+<td>Grundlagen der Informatik: Lesen und Verstehen</td>
+</tr>
+<tr>
+<td>Dienstag</td>
+<td>17:00 - 20:30</td>
+<td>Mathematik I: Lesen und Verstehen</td>
+</tr>
+<tr>
+<td>Mittwoch</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Donnerstag</td>
+<td>17:00 - 20:30</td>
+<td>Naturwissenschaftliche Grundlagen: Lesen und Verstehen</td>
+</tr>
+<tr>
+<td>Freitag</td>
+<td>17:00 - 20:30</td>
+<td>Grundlagen der Betriebswirtschaft: Lesen und Verstehen</td>
+</tr>
+<tr>
+<td>Samstag</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Sonntag</td>
+<td>10:00 - 13:00</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Lesen und Verstehen</td>
+</tr>
+<tr>
+<td></td>
+<td>14:00 - 17:00</td>
+<td>Wiederholung und Übung (abwechselnd)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="juni-2024-nach-dem-urlaub">Juni 2024 (nach dem Urlaub) </h4>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Zeit</th>
+<th>Aktivität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Montag</td>
+<td>17:00 - 20:30</td>
+<td>Mathematik I: Lesen und Verstehen</td>
+</tr>
+<tr>
+<td>Dienstag</td>
+<td>17:00 - 20:30</td>
+<td>Grundlagen der Informatik: Lesen und Verstehen</td>
+</tr>
+<tr>
+<td>Mittwoch</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Donnerstag</td>
+<td>17:00 - 20:30</td>
+<td>Naturwissenschaftliche Grundlagen: Lesen und Verstehen</td>
+</tr>
+<tr>
+<td>Freitag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Lesen und Verstehen</td>
+</tr>
+<tr>
+<td>Samstag</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Sonntag</td>
+<td>10:00 - 13:00</td>
+<td>Grundlagen der Betriebswirtschaft: Lesen und Verstehen</td>
+</tr>
+<tr>
+<td></td>
+<td>14:00 - 17:00</td>
+<td>Wiederholung und Übung (abwechselnd)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="juli-2024-nach-dem-urlaub">Juli 2024 (nach dem Urlaub) </h4>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Zeit</th>
+<th>Aktivität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Montag</td>
+<td>17:00 - 20:30</td>
+<td>Mathematik I: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Dienstag</td>
+<td>17:00 - 20:30</td>
+<td>Grundlagen der Informatik: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Mittwoch</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Donnerstag</td>
+<td>17:00 - 20:30</td>
+<td>Naturwissenschaftliche Grundlagen: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Freitag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Samstag</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Sonntag</td>
+<td>10:00 - 13:00</td>
+<td>Grundlagen der Betriebswirtschaft: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td></td>
+<td>14:00 - 17:00</td>
+<td>Wiederholung und Übung (abwechselnd)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="august-2024-nach-der-klausur-am-3-august">August 2024 (nach der Klausur am 3. August) </h4>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Zeit</th>
+<th>Aktivität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Montag</td>
+<td>17:00 - 20:30</td>
+<td>Mathematik I: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Dienstag</td>
+<td>17:00 - 20:30</td>
+<td>Naturwissenschaftliche Grundlagen: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Mittwoch</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Donnerstag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Freitag</td>
+<td>17:00 - 20:30</td>
+<td>Grundlagen der Betriebswirtschaft: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Samstag</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Sonntag</td>
+<td>10:00 - 13:00</td>
+<td>Naturwissenschaftliche Grundlagen: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td></td>
+<td>14:00 - 17:00</td>
+<td>Wiederholung und Übung (abwechselnd)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="september-2024-nach-den-klausuren-am-14-september">September 2024 (nach den Klausuren am 14. September) </h4>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Zeit</th>
+<th>Aktivität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Montag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Lesen und Verstehen</td>
+</tr>
+<tr>
+<td>Dienstag</td>
+<td>17:00 - 20:30</td>
+<td>Grundlagen der Betriebswirtschaft: Lesen und Verstehen</td>
+</tr>
+<tr>
+<td>Mittwoch</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Donnerstag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Freitag</td>
+<td>17:00 - 20:30</td>
+<td>Grundlagen der Betriebswirtschaft: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Samstag</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Sonntag</td>
+<td>10:00 - 13:00</td>
+<td>Wiederholung und Übung</td>
+</tr>
+<tr>
+<td></td>
+<td>14:00 - 17:00</td>
+<td>Wiederholung und Übung</td>
+</tr>
+</tbody>
+</table>
+<h4 id="oktober-2024-nach-der-klausur-am-26-oktober">Oktober 2024 (nach der Klausur am 26. Oktober) </h4>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Zeit</th>
+<th>Aktivität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Montag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Dienstag</td>
+<td>17:00 - 20:30</td>
+<td>Grundlagen der Betriebswirtschaft: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Mittwoch</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Donnerstag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Freitag</td>
+<td>17:00 - 20:30</td>
+<td>Grundlagen der Betriebswirtschaft: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Samstag</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Sonntag</td>
+<td>10:00 - 13:00</td>
+<td>Wiederholung und Übung</td>
+</tr>
+<tr>
+<td></td>
+<td>14:00 - 17:00</td>
+<td>Wiederholung und Übung</td>
+</tr>
+</tbody>
+</table>
+<h4 id="november-2024">November 2024 </h4>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Zeit</th>
+<th>Aktivität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Montag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Dienstag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Mittwoch</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Donnerstag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Freitag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Übungen und Selbststudium</td>
+</tr>
+<tr>
+<td>Samstag</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Sonntag</td>
+<td>10:00 - 13:00</td>
+<td>Wiederholung und Übung</td>
+</tr>
+<tr>
+<td></td>
+<td>14:00 - 17:00</td>
+<td>Wiederholung und Übung</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dezember-2024-vor-der-klausur-am-7-dezember">Dezember 2024 (vor der Klausur am 7. Dezember) </h4>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Zeit</th>
+<th>Aktivität</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Montag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Prüfungsvorbereitung</td>
+</tr>
+<tr>
+<td>Dienstag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Prüfungsvorbereitung</td>
+</tr>
+<tr>
+<td>Mittwoch</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Donnerstag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Prüfungsvorbereitung</td>
+</tr>
+<tr>
+<td>Freitag</td>
+<td>17:00 - 20:30</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Prüfungsvorbereitung</td>
+</tr>
+<tr>
+<td>Samstag</td>
+<td>--</td>
+<td>Frei</td>
+</tr>
+<tr>
+<td>Sonntag</td>
+<td>10:00 - 13:00</td>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++: Prüfungsvorbereitung</td>
+</tr>
+<tr>
+<td></td>
+<td>14:00 - 17:00</td>
+<td>Wiederholung und Übung</td>
+</tr>
+</tbody>
+</table>
+<h2 id="smart-ziel">SMART-Ziel </h2>
+<h3 id="spezifisch">Spezifisch </h3>
+<p>Ich möchte im ersten Semester meines Fahrzeugtechnik-Studiums (Start: 13. Mai 2024) alle fünf Klausuren erfolgreich bestehen und dabei eine Gesamtnote von mindestens 2,9 erreichen.</p>
+<h3 id="messbar">Messbar </h3>
+<ul>
+<li>Bestehen aller fünf Klausuren im ersten Semester</li>
+<li>Erreichen einer Durchschnittsnote von 2,9 oder besser</li>
+</ul>
+<h3 id="attraktiv">Attraktiv </h3>
+<p>Erfolgreiches Bestehen des ersten Semesters mit guten Noten wird mir eine solide Grundlage für den weiteren Verlauf meines Studiums geben und mich motivieren.</p>
+<h3 id="realistisch">Realistisch </h3>
+<p>Mit einem strukturierten Lernplan, konsequenter Anwendung von Lernstrategien (Feynman-Methode, SQ3R, Pomodoro-Technik) und durch Nutzung von Wiederholung und Übungen ist das Ziel erreichbar.</p>
+<h3 id="terminiert">Terminiert </h3>
+<p>Das Ziel soll bis zum Ende des ersten Semesters, also bis zum 7. Dezember 2024, erreicht werden.</p>
+<h2 id="kanban-board">Kanban-Board </h2>
+<h3 id="aufgaben">Aufgaben </h3>
+<p><strong>To Do:</strong></p>
+<ul>
+<li>Grundlagen der Informatik</li>
+<li>Mathematik I</li>
+<li>Naturwissenschaftliche Grundlagen</li>
+<li>Einführung Ingenieurpraxis, Matlab, C/C++</li>
+<li>Grundlagen der Betriebswirtschaft</li>
+</ul>
+<p><strong>In Progress:</strong></p>
+<ul>
+<li>Lesen &amp; Verstehen für alle Module</li>
+<li>Übungen und Selbststudium für alle Module</li>
+</ul>
+<p><strong>Review:</strong></p>
+<ul>
+<li>Wiederholung und Übung für alle Module</li>
+</ul>
+<p><strong>Done:</strong></p>
+<ul>
+<li>Klausur bestanden für jedes Modul</li>
+</ul>
+<h3 id="beispiel-kanban-board">Beispiel Kanban-Board </h3>
+<table>
+<thead>
+<tr>
+<th><strong>To Do</strong></th>
+<th><strong>In Progress</strong></th>
+<th><strong>Review</strong></th>
+<th><strong>Done</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grundlagen der Informatik</td>
+<td>Lesen &amp; Verstehen</td>
+<td>Wiederholung und Übung</td>
+<td>Klausur bestanden</td>
+</tr>
+<tr>
+<td>Mathematik I</td>
+<td>Übungen und Selbststudium</td>
+<td>Wiederholung und Übung</td>
+<td>Klausur bestanden</td>
+</tr>
+<tr>
+<td>Naturwissenschaftliche Grundlagen</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Einführung Ingenieurpraxis, Matlab, C/C++</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Grundlagen der Betriebswirtschaft</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="deadline-und-roadmap">Deadline und Roadmap </h2>
+<h3 id="deadline">Deadline </h3>
+<ul>
+<li><strong>7. Dezember 2024:</strong> Alle Klausuren des ersten Semesters erfolgreich bestanden</li>
+</ul>
+<h3 id="roadmap">Roadmap </h3>
+<ol>
+<li>
+<p><strong>Mai 2024:</strong></p>
+<ul>
+<li>Start des Semesters</li>
+<li>Einführende Literatur und Materialien für alle Module beschaffen</li>
+<li>Erster Überblick über die Module</li>
+<li>Beginn mit Lesen und Verstehen von Grundlagen der Informatik und Mathematik I</li>
+</ul>
+</li>
+<li>
+<p><strong>Juni 2024:</strong></p>
+<ul>
+<li>Urlaub vom 1. Juni bis 23. Juni</li>
+<li>Fortsetzung des Lesens und Verstehens von Grundlagen der Informatik und Mathematik I nach dem Urlaub</li>
+<li>Anmeldung für die Klausuren im August (Anmeldezeitraum: 8. Juni bis 29. Juni)</li>
+</ul>
+</li>
+<li>
+<p><strong>Juli 2024:</strong></p>
+<ul>
+<li>Intensives Lernen und Abschluss "Lesen und Verstehen" für Grundlagen der Informatik und Mathematik I</li>
+<li>Beginn mit Übungen und Selbststudium für Grundlagen der Informatik</li>
+<li>Fortsetzung des Lesens und Verstehens von Naturwissenschaftlichen Grundlagen und Grundlagen der Betriebswirtschaft</li>
+</ul>
+</li>
+<li>
+<p><strong>August 2024:</strong></p>
+<ul>
+<li><strong>3. August:</strong> Klausur Grundlagen der Informatik</li>
+<li>Fortsetzung der Übungen und Selbststudium für Mathematik I</li>
+<li>Anmeldung für die Klausuren im September (20. Juli bis 10. August)</li>
+<li>Abschluss "Lesen und Verstehen" für Naturwissenschaftliche Grundlagen</li>
+</ul>
+</li>
+<li>
+<p><strong>September 2024:</strong></p>
+<ul>
+<li><strong>14. September:</strong> Klausuren Mathematik I und Naturwissenschaftliche Grundlagen</li>
+<li>Intensives Lernen und Abschluss "Lesen und Verstehen" für Einführung Ingenieurpraxis, Matlab, C/C++ und Grundlagen der Betriebswirtschaft</li>
+<li>Beginn mit Übungen und Selbststudium</li>
+</ul>
+</li>
+<li>
+<p><strong>Oktober 2024:</strong></p>
+<ul>
+<li><strong>26. Oktober:</strong> Klausur Grundlagen der Betriebswirtschaft und rechtliche Grundlagen</li>
+<li>Fortsetzung der Übungen und Selbststudium für Einführung Ingenieurpraxis, Matlab, C/C++</li>
+<li>Anmeldung für die Klausuren im Dezember (12. Oktober bis 2. November)</li>
+</ul>
+</li>
+<li>
+<p><strong>November 2024:</strong></p>
+<ul>
+<li>Intensives Lernen und Abschluss "Lesen und Verstehen" für Einführung Ingenieurpraxis, Matlab, C/C++</li>
+<li>Fortsetzung der Übungen und Selbststudium</li>
+</ul>
+</li>
+<li>
+<p><strong>Dezember 2024:</strong></p>
+<ul>
+<li><strong>7. Dezember:</strong> Klausur Einführung Ingenieurpraxis, Matlab, C/C++</li>
+<li>Nachbereitung und Übung für eventuelle Wiederholungsklausuren</li>
+</ul>
+</li>
+</ol>
+<h3 id="roadmap-für-jedes-modul">Roadmap für jedes Modul </h3>
+<h4 id="grundlagen-der-informatik-1">Grundlagen der Informatik </h4>
+<ul>
+<li><strong>Mai - Juni 2024:</strong> Lesen und Verstehen (99 Stunden)</li>
+<li><strong>Juli 2024:</strong> Übungen und Selbststudium (72 Stunden)</li>
+<li><strong>Letzte Woche Juli 2024:</strong> Prüfungsvorbereitung (9 Stunden)</li>
+<li><strong>3. August 2024:</strong> Klausur</li>
+</ul>
+<h4 id="mathematik-i-1">Mathematik I </h4>
+<ul>
+<li><strong>Mai - Juni 2024:</strong> Lesen und Verstehen (72 Stunden)</li>
+<li><strong>Juli - August 2024:</strong> Übungen und Selbststudium (99 Stunden)</li>
+<li><strong>Letzte Woche August 2024:</strong> Prüfungsvorbereitung (9 Stunden)</li>
+<li><strong>14. September 2024:</strong> Klausur</li>
+</ul>
+<h4 id="naturwissenschaftliche-grundlagen-1">Naturwissenschaftliche Grundlagen </h4>
+<ul>
+<li><strong>Juni - Juli 2024:</strong> Lesen und Verstehen (99 Stunden)</li>
+<li><strong>August 2024:</strong> Übungen und Selbststudium (72 Stunden)</li>
+<li><strong>Letzte Woche August 2024:</strong> Prüfungsvorbereitung (9 Stunden)</li>
+<li><strong>14. September 2024:</strong> Klausur</li>
+</ul>
+<h4 id="grundlagen-der-betriebswirtschaft-1">Grundlagen der Betriebswirtschaft </h4>
+<ul>
+<li><strong>Juli - August 2024:</strong> Lesen und Verstehen (108 Stunden)</li>
+<li><strong>September - Oktober 2024:</strong> Übungen und Selbststudium (54 Stunden)</li>
+<li><strong>Letzte Woche Oktober 2024:</strong> Prüfungsvorbereitung (18 Stunden)</li>
+<li><strong>26. Oktober 2024:</strong> Klausur</li>
+</ul>
+<h4 id="einführung-ingenieurpraxis-matlab-cc-1">Einführung Ingenieurpraxis, Matlab, C/C++ </h4>
+<ul>
+<li><strong>August - September 2024:</strong> Lesen und Verstehen (72 Stunden)</li>
+<li><strong>Oktober - November 2024:</strong> Übungen und Selbststudium (99 Stunden)</li>
+<li><strong>Letzte Woche November 2024:</strong> Prüfungsvorbereitung (9 Stunden)</li>
+<li><strong>7. Dezember 2024:</strong> Klausur</li>
+</ul>
+<h2 id="tagesplan-für-das-1-semester">Tagesplan für das 1. Semester </h2>
+<h3 id="integration-der-lernstrategien-und-grundlagen-des-lernens">Integration der Lernstrategien und Grundlagen des Lernens </h3>
+<ul>
+<li><strong>Aktives Lernen:</strong> Statt passiv Informationen aufzunehmen, aktiv mit dem Lernstoff interagieren, z.B. durch Notizen machen, Fragen stellen und Diskussionen führen.</li>
+<li><strong>Wiederholung:</strong> Regelmäßiges Wiederholen des Lernstoffs, um Informationen im Langzeitgedächtnis zu verankern.</li>
+<li><strong>Feynman-Methode:</strong> Das Konzept in einfachen Worten erklären, das Verständnis überprüfen, Lücken identifizieren und die Erklärung verbessern.</li>
+<li><strong>SQ3R-Methode:</strong> Überblick verschaffen, Fragen stellen, Text aufmerksam lesen, das Gelesene wiedergeben und regelmäßig überprüfen.</li>
+<li><strong>Pomodoro-Technik:</strong> Kurze, intensive Zeitblöcke (z.B. 25 Minuten) gefolgt von kurzen Pausen (5 Minuten). Nach vier Blöcken folgt eine längere Pause (15-30 Minuten).</li>
+<li><strong>Mind Mapping:</strong> Informationen und ihre Zusammenhänge visualisieren, um komplexe Themen besser zu verstehen und zu strukturieren.</li>
+<li><strong>Spaced Repetition:</strong> Das Lernen über längere Zeiträume verteilen und die Lerninhalte in zunehmenden Abständen wiederholen, um das Langzeitgedächtnis zu stärken.</li>
+</ul>
+<h3 id="detaillierter-tagesplan">Detaillierter Tagesplan </h3>
+<h4 id="montag">Montag </h4>
+<ul>
+<li><strong>17:00 - 17:15:</strong> Vorbereitung, Materialien sammeln</li>
+<li><strong>17:15 - 18:15:</strong> <strong>Aktives Lernen</strong> – Lesen und Verstehen / Übungen und Selbststudium
+<ul>
+<li><strong>Strategie:</strong> Feynman-Methode (Erkläre das Konzept in einfachen Worten)</li>
+</ul>
+</li>
+<li><strong>18:15 - 19:00:</strong> <strong>Wiederholung</strong> – Übungsaufgaben lösen</li>
+<li><strong>19:00 - 20:00:</strong> <strong>Mind Mapping</strong> – Visuelle Darstellung der gelernten Konzepte</li>
+<li><strong>20:00 - 20:30:</strong> <strong>Zusammenfassung schreiben</strong> – Hauptpunkte des Tages zusammenfassen</li>
+</ul>
+<h4 id="dienstag">Dienstag </h4>
+<ul>
+<li><strong>17:00 - 17:15:</strong> Vorbereitung, Materialien sammeln</li>
+<li><strong>17:15 - 18:15:</strong> <strong>Aktives Lernen</strong> – Lesen und Verstehen / Übungen und Selbststudium
+<ul>
+<li><strong>Strategie:</strong> SQ3R-Methode (Survey, Question, Read, Recite, Review)</li>
+</ul>
+</li>
+<li><strong>18:15 - 19:00:</strong> <strong>Wiederholung</strong> – Übungsaufgaben lösen</li>
+<li><strong>19:00 - 20:00:</strong> <strong>Pomodoro-Technik</strong> – 2x 25 Minuten intensive Arbeit mit 5 Minuten Pause</li>
+<li><strong>20:00 - 20:30:</strong> <strong>Zusammenfassung schreiben</strong> – Hauptpunkte des Tages zusammenfassen</li>
+</ul>
+<h4 id="mittwoch">Mittwoch </h4>
+<ul>
+<li><strong>Frei</strong> (Optionales Lernen oder Entspannung)</li>
+</ul>
+<h4 id="donnerstag">Donnerstag </h4>
+<ul>
+<li><strong>17:00 - 17:15:</strong> Vorbereitung, Materialien sammeln</li>
+<li><strong>17:15 - 18:15:</strong> <strong>Aktives Lernen</strong> – Lesen und Verstehen / Übungen und Selbststudium
+<ul>
+<li><strong>Strategie:</strong> Feynman-Methode (Erkläre das Konzept in einfachen Worten)</li>
+</ul>
+</li>
+<li><strong>18:15 - 19:00:</strong> <strong>Wiederholung</strong> – Übungsaufgaben lösen</li>
+<li><strong>19:00 - 20:00:</strong> <strong>Mind Mapping</strong> – Visuelle Darstellung der gelernten Konzepte</li>
+<li><strong>20:00 - 20:30:</strong> <strong>Zusammenfassung schreiben</strong> – Hauptpunkte des Tages zusammenfassen</li>
+</ul>
+<h4 id="freitag">Freitag </h4>
+<ul>
+<li><strong>17:00 - 17:15:</strong> Vorbereitung, Materialien sammeln</li>
+<li><strong>17:15 - 18:15:</strong> <strong>Aktives Lernen</strong> – Lesen und Verstehen / Übungen und Selbststudium
+<ul>
+<li><strong>Strategie:</strong> SQ3R-Methode (Survey, Question, Read, Recite, Review)</li>
+</ul>
+</li>
+<li><strong>18:15 - 19:00:</strong> <strong>Wiederholung</strong> – Übungsaufgaben lösen</li>
+<li><strong>19:00 - 20:00:</strong> <strong>Pomodoro-Technik</strong> – 2x 25 Minuten intensive Arbeit mit 5 Minuten Pause</li>
+<li><strong>20:00 - 20:30:</strong> <strong>Zusammenfassung schreiben</strong> – Hauptpunkte des Tages zusammenfassen</li>
+</ul>
+<h4 id="samstag">Samstag </h4>
+<ul>
+<li><strong>Frei</strong> (Optionales Lernen oder Entspannung)</li>
+</ul>
+<h4 id="sonntag">Sonntag </h4>
+<ul>
+<li>
+<p><strong>10:00 - 10:15:</strong> Vorbereitung, Materialien sammeln</p>
+</li>
+<li>
+<p><strong>10:15 - 11:15:</strong> <strong>Aktives Lernen</strong> – Lesen und Verstehen / Übungen und Selbststudium</p>
+<ul>
+<li><strong>Strategie:</strong> Feynman-Methode (Erkläre das Konzept in einfachen Worten)</li>
+</ul>
+</li>
+<li>
+<p><strong>11:15 - 12:00:</strong> <strong>Wiederholung</strong> – Übungsaufgaben lösen</p>
+</li>
+<li>
+<p><strong>12:00 - 13:00:</strong> <strong>Mind Mapping</strong> – Visuelle Darstellung der gelernten Konzepte</p>
+</li>
+<li>
+<p><strong>14:00 - 14:15:</strong> Vorbereitung, Materialien sammeln</p>
+</li>
+<li>
+<p><strong>14:15 - 15:15:</strong> <strong>Wiederholung der Woche</strong></p>
+<ul>
+<li><strong>Strategie:</strong> Spaced Repetition – Lernkarten wiederholen (Anki)</li>
+</ul>
+</li>
+<li>
+<p><strong>15:15 - 16:00:</strong> <strong>Übungsaufgaben für alle Module</strong></p>
+<ul>
+<li><strong>Strategie:</strong> Pomodoro-Technik – 2x 25 Minuten intensive Arbeit mit 5 Minuten Pause</li>
+</ul>
+</li>
+</ul>
+<h2 id="verteilung-der-arbeitsstunden-für-studienheft-mai01a-gesamtzeit-180h4x-studienhefte--45-stunden">Verteilung der Arbeitsstunden für Studienheft MAI01A (Gesamtzeit 180h/4x Studienhefte = 45 Stunden) </h2>
+<ol>
+<li>
+<p><strong>Lesen und Verstehen (18 Stunden):</strong></p>
+<ul>
+<li>Kapitel 1.1, 1.2, 1.3: 6 Stunden</li>
+<li>Kapitel 2.1, 2.2, 2.3: 6 Stunden</li>
+<li>Kapitel 3.1, 3.2, 3.3: 6 Stunden</li>
+</ul>
+</li>
+<li>
+<p><strong>Übungen und Selbststudium (25 Stunden):</strong></p>
+<ul>
+<li>Übungen zu Kapitel 1: 8 Stunden</li>
+<li>Übungen zu Kapitel 2: 8 Stunden</li>
+<li>Übungen zu Kapitel 3: 9 Stunden</li>
+</ul>
+</li>
+<li>
+<p><strong>Prüfungsvorbereitung und Prüfung (2 Stunden):</strong></p>
+<ul>
+<li>Wiederholung und Übungsklausuren: 2 Stunden</li>
+</ul>
+</li>
+</ol>
+<p>Python: <code>python gesamtarbeitszeit_pro_modul.py</code></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

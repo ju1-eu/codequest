@@ -7,6 +7,7 @@ Ein Testskript (test_levels.py) ermöglicht das Testen der Aufgaben.
 import os
 import subprocess
 from progress import load_progress, save_progress, mark_level_completed, display_progress, set_player_name
+from utils import validate_level_number, format_instructions, prompt_for_numbers
 
 def load_level(level_number):
     level_number = int(level_number)  # Konvertiere level_number in eine Ganzzahl
@@ -14,8 +15,7 @@ def load_level(level_number):
     instructions_path = f"levels/level{level_number}/instructions.md"
 
     try:
-        with open(instructions_path) as f:
-            instructions = f.read()
+        instructions = format_instructions(instructions_path)
         print(instructions)
 
         if language == "Python":
@@ -33,11 +33,9 @@ def load_level(level_number):
             # Öffne ein Pseudo-Terminal für Benutzereingaben
             p = subprocess.Popen(["make", "-C", f"levels/level{level_number}", "run"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
-            if level_number == 4 or level_number == 5:
-                # Lese Benutzereingaben für Level 4 und 5
-                eingabe1 = input("Gib die erste Zahl ein: ") + "\n"
-                eingabe2 = input("Gib die zweite Zahl ein: ") + "\n"
-                user_input = eingabe1 + eingabe2
+            if level_number in [4, 5, 8, 9, 10, 11, 12]:  # Levels, die Benutzereingaben erfordern
+                numbers = prompt_for_numbers("Gib eine Zahl ein", 2)
+                user_input = "\n".join(map(str, numbers)) + "\n"
                 stdout, stderr = p.communicate(input=user_input)
             else:
                 stdout, stderr = p.communicate()
@@ -83,10 +81,10 @@ def main():
 
         if choice == "1":
             level_number = input("Wähle ein Level: ")
-            if level_number.isdigit():
+            if validate_level_number(level_number):
                 load_level(int(level_number))
             else:
-                print("Ungültige Eingabe. Bitte gib eine Zahl ein.")
+                print("Ungültige Eingabe. Bitte gib eine Zahl zwischen 1 und 24 ein.")
         elif choice == "2":
             display_progress()
         elif choice == "3":

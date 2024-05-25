@@ -8,9 +8,10 @@ def run_test(level):
     if file_extension == 'py':
         command = ["python", f"levels/level{level}/task.py"]
         # Simuliere Eingaben für die Python-Levels
-        input_data = "2\n3\n" if level == 1 else "4\n5\n"
+        input_data = "2\n3\n" if level == 1 else "4\n5\n" if level == 2 else ""
         result = subprocess.run(command, input=input_data, capture_output=True, text=True, timeout=60)  # Timeout erhöht
     else:
+        # Ausführen der Make-Kommandos für die C++-Levels
         print(f"Führe 'make clean' für Level {level} aus...")
         clean_result = subprocess.run(["make", "-C", f"levels/level{level}", "clean"], capture_output=True, text=True)
         print(f"Ausgabe von 'make clean': {clean_result.stdout}")
@@ -28,10 +29,11 @@ def run_test(level):
         print(f"Führe 'make run' für Level {level} aus...")
         command = ["make", "-C", f"levels/level{level}", "run"]
 
+        # Simulierte Eingaben für die C++-Levels
         if level == 4:
-            input_data = "2\n3\n"  # Simulierte Eingaben für Level 4
+            input_data = "2\n3\n"  # Eingaben für Level 4
         elif level == 5:
-            input_data = "2\n3\n"  # Simulierte Eingaben für Level 5
+            input_data = "2\n3\n"  # Eingaben für Level 5
         else:
             input_data = None  # Keine Eingaben für Level 6 und darüber
 
