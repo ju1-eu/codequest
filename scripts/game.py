@@ -5,37 +5,53 @@ und zeigt die Anweisungen an.
 Ein Testskript (test_levels.py) ermöglicht das Testen der Aufgaben.
 """
 import os
+import subprocess
 
 def load_level(level_number):
     level_number = int(level_number)  # Konvertiere level_number in eine Ganzzahl
     language = 'python' if level_number <= 3 else 'cpp'
 
-    if language == 'python':
-        file_extension = 'py'
-        instructions_path = f"levels/level{level_number}/instructions.md"
-        task_path = f"levels/level{level_number}/task.{file_extension}"
-        try:
-            with open(instructions_path) as f:
-                instructions = f.read()
-            print(instructions)
+    instructions_path = f"levels/level{level_number}/instructions.md"
+
+    try:
+        with open(instructions_path) as f:
+            instructions = f.read()
+        print(instructions)
+
+        if language == 'python':
+            task_path = f"levels/level{level_number}/task.py"
             os.system(f"python {task_path}")
-        except FileNotFoundError:
-            print(f"Level {level_number} nicht gefunden.")
-        except Exception as e:
-            print(f"Ein Fehler ist aufgetreten: {e}")
-    else:
-        instructions_path = f"levels/level{level_number}/instructions.md"
-        makefile_path = f"levels/level{level_number}/Makefile"
-        try:
-            with open(instructions_path) as f:
-                instructions = f.read()
-            print(instructions)
-            os.system(f"make -C levels/level{level_number}")
-            os.system(f"make -C levels/level{level_number} run")
-        except FileNotFoundError:
-            print(f"Level {level_number} nicht gefunden.")
-        except Exception as e:
-            print(f"Ein Fehler ist aufgetreten: {e}")
+        else:
+            print(f"Führe 'make clean' für Level {level_number} aus...")
+            subprocess.run(["make", "-C", f"levels/level{level_number}", "clean"], check=True)
+
+            print(f"Führe 'make' für Level {level_number} aus...")
+            subprocess.run(["make", "-C", f"levels/level{level_number}"], check=True)
+
+            print(f"Führe 'make run' für Level {level_number} aus...")
+
+            # Öffne ein Pseudo-Terminal für Benutzereingaben
+            p = subprocess.Popen(["make", "-C", f"levels/level{level_number}", "run"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+            if level_number == 4 or level_number == 5:
+                # Lese Benutzereingaben für Level 4 und 5
+                eingabe1 = input("Gib die erste Zahl ein: ") + "\n"
+                eingabe2 = input("Gib die zweite Zahl ein: ") + "\n"
+                user_input = eingabe1 + eingabe2
+                stdout, stderr = p.communicate(input=user_input)
+            else:
+                stdout, stderr = p.communicate()
+
+            print(stdout)
+            if p.returncode != 0:
+                print(f"Fehler beim Ausführen von Level {level_number}: {stderr}")
+
+    except FileNotFoundError:
+        print(f"Level {level_number} nicht gefunden.")
+    except subprocess.CalledProcessError as e:
+        print(f"Fehler beim Ausführen des Make-Befehls: {e}")
+    except Exception as e:
+        print(f"Ein Fehler ist aufgetreten: {e}")
 
 def main():
     print("Willkommen bei CodeQuest Terminal Edition!")
