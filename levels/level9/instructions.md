@@ -1,14 +1,15 @@
-# Level 6: Bedingte Anweisungen und Schleifen
+# Level 9: Einführung in Suchalgorithmen (Lineare Suche)
 
 ## Ziel
 
-Einführung in Kontrollstrukturen wie `if`-Anweisungen und `for`-Schleifen.
+Verstehe den Algorithmus der linearen Suche und implementiere ihn in Python und C++.
 
 ## Aufgabe
 
-Schreibe ein C++-Programm, das die Zahlen von 1 bis 10 ausgibt und anzeigt, ob jede Zahl gerade oder ungerade ist.
+Schreibe ein Programm (in Python und C++), das eine Zahl in einer Liste mittels linearer Suche findet.
 
 ## Hinweise
 
-- Verwende eine `for`-Schleife, um die Zahlen von 1 bis 10 zu durchlaufen.
-- Verwende eine `if`-Anweisung, um zu überprüfen, ob eine Zahl gerade oder ungerade ist.
+- Durchlaufe die Liste von Anfang bis Ende.
+- Vergleiche jedes Element mit der gesuchten Zahl.
+- Analysiere die Zeitkomplexität des Algorithmus.

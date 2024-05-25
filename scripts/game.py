@@ -1,9 +1,3 @@
-"""
-Jedes Level enthält eine Anleitung (instructions.md), eine Aufgabe (task.py)
-und eine Lösung (solution.py). Das Hauptspielskript (game.py) lädt die Level
-und zeigt die Anweisungen an.
-Ein Testskript (test_levels.py) ermöglicht das Testen der Aufgaben.
-"""
 import os
 import subprocess
 from progress import load_progress, save_progress, mark_level_completed, display_progress, set_player_name
@@ -11,17 +5,23 @@ from utils import validate_level_number, format_instructions, prompt_for_numbers
 
 def load_level(level_number):
     level_number = int(level_number)  # Konvertiere level_number in eine Ganzzahl
-    language = determine_language_for_level(level_number)
     instructions_path = f"levels/level{level_number}/instructions.md"
 
     try:
         instructions = format_instructions(instructions_path)
         print(instructions)
 
-        if language == "Python":
+        if 1 <= level_number <= 3:  # Python-Levels 1-3
             task_path = f"levels/level{level_number}/task.py"
-            os.system(f"python {task_path}")
-        else:
+            if level_number in [1, 2]:  # Levels, die Benutzereingaben erfordern
+                print("Bitte geben Sie zwei Zahlen ein:")
+                input_data = input("Erste Zahl: ") + "\n" + input("Zweite Zahl: ") + "\n"
+                subprocess.run(["python", task_path], input=input_data, text=True)
+            else:
+                os.system(f"python {task_path}")
+            mark_level_completed("Python", level_number)
+
+        elif 4 <= level_number <= 6:  # C++-Levels 4-6
             print(f"Führe 'make clean' für Level {level_number} aus...")
             subprocess.run(["make", "-C", f"levels/level{level_number}", "clean"], check=True)
 
@@ -29,23 +29,34 @@ def load_level(level_number):
             subprocess.run(["make", "-C", f"levels/level{level_number}"], check=True)
 
             print(f"Führe 'make run' für Level {level_number} aus...")
-
-            # Öffne ein Pseudo-Terminal für Benutzereingaben
             p = subprocess.Popen(["make", "-C", f"levels/level{level_number}", "run"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-
-            if level_number in [4, 5, 8, 9, 10, 11, 12]:  # Levels, die Benutzereingaben erfordern
-                numbers = prompt_for_numbers("Gib eine Zahl ein", 2)
-                user_input = "\n".join(map(str, numbers)) + "\n"
-                stdout, stderr = p.communicate(input=user_input)
+            if level_number in [4, 5]:  # Levels, die Benutzereingaben erfordern
+                print("Bitte geben Sie zwei Zahlen ein:")
+                input_data = input("Erste Zahl: ") + "\n" + input("Zweite Zahl: ") + "\n"
+                stdout, stderr = p.communicate(input=input_data)
             else:
                 stdout, stderr = p.communicate()
 
             print(stdout)
             if p.returncode != 0:
                 print(f"Fehler beim Ausführen von Level {level_number}: {stderr}")
+            else:
+                mark_level_completed("C++", level_number)
 
-        # Markiere das Level als abgeschlossen
-        mark_level_completed(language, level_number)
+        elif level_number >= 7:  # Python und C++ für Levels ab 7
+            task_path_py = f"levels/level{level_number}/task.py"
+            print(f"Ausgabe von Python für Level {level_number}:")
+            os.system(f"python {task_path_py}")
+
+            print(f"Führe 'make clean' für Level {level_number} aus...")
+            subprocess.run(["make", "-C", f"levels/level{level_number}", "clean"], check=True)
+
+            print(f"Führe 'make' für Level {level_number} aus...")
+            subprocess.run(["make", "-C", f"levels/level{level_number}"], check=True)
+
+            print(f"Ausgabe von C++ für Level {level_number}:")
+            subprocess.run(["make", "-C", f"levels/level{level_number}", "run"], check=True)
+            mark_level_completed("Algorithms", level_number)
 
     except FileNotFoundError:
         print(f"Level {level_number} nicht gefunden.")

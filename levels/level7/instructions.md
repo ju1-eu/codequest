@@ -1,14 +1,15 @@
-# Level 6: Bedingte Anweisungen und Schleifen
+# Level 7: Einführung in Sortieralgorithmen (Bubble Sort)
 
 ## Ziel
 
-Einführung in Kontrollstrukturen wie `if`-Anweisungen und `for`-Schleifen.
+Verstehe den Bubble Sort Algorithmus und implementiere ihn in Python und C++.
 
 ## Aufgabe
 
-Schreibe ein C++-Programm, das die Zahlen von 1 bis 10 ausgibt und anzeigt, ob jede Zahl gerade oder ungerade ist.
+Schreibe ein Programm (in Python und C++), das eine Liste von Zahlen mittels Bubble Sort sortiert.
 
 ## Hinweise
 
-- Verwende eine `for`-Schleife, um die Zahlen von 1 bis 10 zu durchlaufen.
-- Verwende eine `if`-Anweisung, um zu überprüfen, ob eine Zahl gerade oder ungerade ist.
+- Verwende eine Schleife, um die Liste zu durchlaufen und benachbarte Elemente zu vergleichen und zu vertauschen, wenn sie in der falschen Reihenfolge sind.
+- Wiederhole diesen Vorgang, bis die Liste vollständig sortiert ist.
+- Analysiere die Zeitkomplexität des Algorithmus.

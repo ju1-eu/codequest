@@ -1,14 +1,3 @@
-"""
-Die Datei `utils.py` in `scripts/` kann verschiedene Hilfsfunktionen enthalten,
-die wiederverwendbaren Code bereitstellen, um die Hauptlogik in deinem Spielskript `game.py`
-und anderen Skripten zu unterstützen.
-
-1. **validate_level_number**: Überprüft, ob die eingegebene Levelnummer gültig ist.
-2. **format_instructions**: Liest die Anweisungen aus der Datei und gibt sie formatiert zurück.
-3. **load_json_file**: Lädt JSON-Daten aus einer Datei.
-4. **save_json_file**: Speichert Daten im JSON-Format in eine Datei.
-5. **prompt_for_numbers**: Fordert den Benutzer zur Eingabe von Zahlen auf und gibt die eingegebenen Zahlen als Liste zurück.
-"""
 import os
 import json
 

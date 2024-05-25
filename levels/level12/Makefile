@@ -1,8 +1,7 @@
-# Makefile für Level 6
+# Makefile für Level 12
 
 CXX = g++
 CXXFLAGS = -Wall -std=c++20
-
 TARGET = task
 
 all: $(TARGET)

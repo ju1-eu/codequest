@@ -1,14 +1,16 @@
-# Level 6: Bedingte Anweisungen und Schleifen
+# Level 11: Komplexe Algorithmen und deren Anwendung
 
 ## Ziel
 
-Einführung in Kontrollstrukturen wie `if`-Anweisungen und `for`-Schleifen.
+Lerne komplexere Algorithmen (z.B. Quick Sort, Merge Sort) und implementiere sie in Python und C++.
 
 ## Aufgabe
 
-Schreibe ein C++-Programm, das die Zahlen von 1 bis 10 ausgibt und anzeigt, ob jede Zahl gerade oder ungerade ist.
+Schreibe ein Programm (in Python und C++), das einen komplexen Algorithmus implementiert und auf ein Beispielproblem anwendet.
 
 ## Hinweise
 
-- Verwende eine `for`-Schleife, um die Zahlen von 1 bis 10 zu durchlaufen.
-- Verwende eine `if`-Anweisung, um zu überprüfen, ob eine Zahl gerade oder ungerade ist.
+- Wähle einen komplexeren Algorithmus (z.B. Quick Sort, Merge Sort).
+- Implementiere den Algorithmus in Python und C++.
+- Teste den Algorithmus mit Beispielproblemen.
+- Analysiere die Zeit- und Raumkomplexität des Algorithmus.

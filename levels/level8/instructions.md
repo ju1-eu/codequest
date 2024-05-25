@@ -1,14 +1,15 @@
-# Level 6: Bedingte Anweisungen und Schleifen
+# Level 8: Einführung in Sortieralgorithmen (Selection Sort)
 
 ## Ziel
 
-Einführung in Kontrollstrukturen wie `if`-Anweisungen und `for`-Schleifen.
+Verstehe den Selection Sort Algorithmus und implementiere ihn in Python und C++.
 
 ## Aufgabe
 
-Schreibe ein C++-Programm, das die Zahlen von 1 bis 10 ausgibt und anzeigt, ob jede Zahl gerade oder ungerade ist.
+Schreibe ein Programm (in Python und C++), das eine Liste von Zahlen mittels Selection Sort sortiert.
 
 ## Hinweise
 
-- Verwende eine `for`-Schleife, um die Zahlen von 1 bis 10 zu durchlaufen.
-- Verwende eine `if`-Anweisung, um zu überprüfen, ob eine Zahl gerade oder ungerade ist.
+- Finde das kleinste Element in der unsortierten Teilliste und tausche es mit dem ersten Element.
+- Wiederhole diesen Vorgang für die restlichen unsortierten Elemente.
+- Analysiere die Zeitkomplexität des Algorithmus.
