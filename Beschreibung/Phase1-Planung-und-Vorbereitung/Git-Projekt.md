@@ -60,7 +60,7 @@ Git-Branching ermöglicht es dir, neue Features oder Änderungen in isolierten U
 1. Erstelle einen neuen Branch für ein neues Feature oder eine Änderung.
 
 ```sh
-git checkout -b feature/algorithmus
+git checkout -b feature/struktogramme
 ```
 
 2. Entwickle dein Feature oder nimm Änderungen vor.
@@ -69,20 +69,20 @@ git checkout -b feature/algorithmus
 
 ```sh
 git add .
-git commit -m "Feature: Algorithmische Problemlösung (Level 7-12)"
+git commit -m "Feature: Struktogramme (Level 13-18)"
 ```
 
 4. Wechsel zurück zum Hauptzweig und integriere die Änderungen.
 
 ```sh
 git checkout main
-git merge feature/algorithmus
+git merge feature/struktogramme
 ```
 
 5. Lösche den Feature-Branch, wenn er nicht mehr benötigt wird.
 
 ```sh
-git branch -d feature/algorithmus
+git branch -d feature/struktogramme
 ```
 
 6. Alle Branches (lokal und remote) anzeigen

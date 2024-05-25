@@ -43,7 +43,7 @@ def load_level(level_number):
             else:
                 mark_level_completed("C++", level_number)
 
-        elif level_number >= 7:  # Python und C++ für Levels ab 7
+        elif 7 <= level_number <= 12:  # Python und C++ für Levels ab 7
             task_path_py = f"levels/level{level_number}/task.py"
             print(f"Ausgabe von Python für Level {level_number}:")
             os.system(f"python {task_path_py}")
@@ -57,6 +57,22 @@ def load_level(level_number):
             print(f"Ausgabe von C++ für Level {level_number}:")
             subprocess.run(["make", "-C", f"levels/level{level_number}", "run"], check=True)
             mark_level_completed("Algorithms", level_number)
+
+        elif 13 <= level_number <= 18:  # Struktogramme und Best Practices
+            task_path_py = f"levels/level{level_number}/task.py"
+            task_path_cpp = f"levels/level{level_number}/task.cpp"
+            print(f"Ausgabe von Python für Level {level_number}:")
+            os.system(f"python {task_path_py}")
+
+            print(f"Führe 'make clean' für Level {level_number} aus...")
+            subprocess.run(["make", "-C", f"levels/level{level_number}", "clean"], check=True)
+
+            print(f"Führe 'make' für Level {level_number} aus...")
+            subprocess.run(["make", "-C", f"levels/level{level_number}"], check=True)
+
+            print(f"Ausgabe von C++ für Level {level_number}:")
+            subprocess.run(["make", "-C", f"levels/level{level_number}", "run"], check=True)
+            mark_level_completed("Struktogramme", level_number)
 
     except FileNotFoundError:
         print(f"Level {level_number} nicht gefunden.")
