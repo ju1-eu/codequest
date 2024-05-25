@@ -94,7 +94,8 @@ Um mit anderen Entwicklern zusammenzuarbeiten oder deine Arbeit zu sichern, kann
 2. Füge das Remote-Repository zu deinem lokalen Repository hinzu.
 
 ```sh
-git remote add origin https://github.com/username/codequest.git
+git remote add origin https://github.com/ju1-eu/codequest.git
+git branch -M main
 ```
 
 3. Schiebe deinen lokalen Code zum Remote-Repository.
