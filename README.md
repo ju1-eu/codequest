@@ -14,6 +14,12 @@
   - Mathematische Operationen und Ausgaben
   - Bedingte Anweisungen und Schleifen
 
+- **Level 7-12**: Algorithmen und Datenstrukturen
+  - Einführung in Sortieralgorithmen (Bubble Sort, Selection Sort)
+  - Einführung in Suchalgorithmen (Lineare Suche, Binäre Suche)
+  - Komplexe Algorithmen und deren Anwendung
+  - Effizienz von Algorithmen und Optimierung
+
 ## Verzeichnisstruktur
 
 ```plaintext
@@ -45,6 +51,42 @@ codequest/
 │   │   ├── instructions.md
 │   │   ├── task.cpp
 │   │   └── solution.cpp
+│   ├── level7/
+│   │   ├── instructions.md
+│   │   ├── task.py
+│   │   ├── task.cpp
+│   │   └── solution.py
+│   │   └── solution.cpp
+│   ├── level8/
+│   │   ├── instructions.md
+│   │   ├── task.py
+│   │   ├── task.cpp
+│   │   └── solution.py
+│   │   └── solution.cpp
+│   ├── level9/
+│   │   ├── instructions.md
+│   │   ├── task.py
+│   │   ├── task.cpp
+│   │   └── solution.py
+│   │   └── solution.cpp
+│   ├── level10/
+│   │   ├── instructions.md
+│   │   ├── task.py
+│   │   ├── task.cpp
+│   │   └── solution.py
+│   │   └── solution.cpp
+│   ├── level11/
+│   │   ├── instructions.md
+│   │   ├── task.py
+│   │   ├── task.cpp
+│   │   └── solution.py
+│   │   └── solution.cpp
+│   ├── level12/
+│   │   ├── instructions.md
+│   │   ├── task.py
+│   │   ├── task.cpp
+│   │   └── solution.py
+│   │   └── solution.cpp
 ├── scripts/
 │   ├── game.py
 │   └── utils.py
@@ -67,7 +109,7 @@ codequest/
 
 1. Klone das Repository:
     ```sh
-    git clone https://github.com/username/codequest.git
+    git clone https://github.com/ju1-eu/codequest.git
     cd codequest
     ```
 
