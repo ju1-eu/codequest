@@ -25,7 +25,7 @@
       <div class="crossnote markdown-preview  ">
       
 <h1 id="schritt-1-struktur-des-fortschrittsdatensatzes">Schritt 1: Struktur des Fortschrittsdatensatzes </h1>
-<p>Zuerst definieren wir die Struktur des JSON-Datensatzes, der den Fortschritt eines Spielers speichert.</p>
+<p>Zuerst definieren wir die Struktur des JSON-Datensatzes, der den Fortschritt eines Spielers speichert. <code>progress.json</code></p>
 <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
   <span class="token property">"player_name"</span><span class="token operator">:</span> <span class="token string">"Jan"</span><span class="token punctuation">,</span>
   <span class="token property">"completed_levels"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -37,7 +37,7 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre><h2 id="schritt-2-speichern-des-fortschritts-in-einer-json-datei">Schritt 2: Speichern des Fortschritts in einer JSON-Datei </h2>
-<p>Erstelle eine Python-Datei <code>progress.py</code>, die Funktionen zum Laden und Speichern des Fortschritts enthält.</p>
+<p>Erstelle eine Python-Datei <code>progress.py</code>, die Funktionen zum Laden und Speichern des Fortschritts enthält:</p>
 <pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-import">import</span> json
 <span class="token keyword keyword-import">import</span> os
 
@@ -79,27 +79,58 @@ PROGRESS_FILE <span class="token operator">=</span> <span class="token string">"
     progress<span class="token punctuation">[</span><span class="token string">"player_name"</span><span class="token punctuation">]</span> <span class="token operator">=</span> name
     save_progress<span class="token punctuation">(</span>progress<span class="token punctuation">)</span>
 </code></pre><h2 id="schritt-3-integration-der-fortschrittsanzeige-ins-spiel">Schritt 3: Integration der Fortschrittsanzeige ins Spiel </h2>
-<p>Integriere die Fortschrittsanzeige und das Markieren abgeschlossener Levels in dein Hauptspielskript <code>game.py</code>.</p>
+<p>Integriere die Fortschrittsanzeige und das Markieren abgeschlossener Levels in dein Hauptspielskript <code>game.py</code>:</p>
 <pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-import">import</span> os
+<span class="token keyword keyword-import">import</span> subprocess
 <span class="token keyword keyword-from">from</span> progress <span class="token keyword keyword-import">import</span> load_progress<span class="token punctuation">,</span> save_progress<span class="token punctuation">,</span> mark_level_completed<span class="token punctuation">,</span> display_progress<span class="token punctuation">,</span> set_player_name
 
 <span class="token keyword keyword-def">def</span> <span class="token function">load_level</span><span class="token punctuation">(</span>level_number<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment"># Lade die Anweisungen für das Level</span>
-    instructions_file <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"levels/level</span><span class="token interpolation"><span class="token punctuation">{</span>level_number<span class="token punctuation">}</span></span><span class="token string">/instructions.md"</span></span>
-    <span class="token keyword keyword-if">if</span> <span class="token keyword keyword-not">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>instructions_file<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Level </span><span class="token interpolation"><span class="token punctuation">{</span>level_number<span class="token punctuation">}</span></span><span class="token string"> nicht gefunden."</span></span><span class="token punctuation">)</span>
-        <span class="token keyword keyword-return">return</span>
-
-    <span class="token keyword keyword-with">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>instructions_file<span class="token punctuation">)</span> <span class="token keyword keyword-as">as</span> f<span class="token punctuation">:</span>
-        instructions <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>instructions<span class="token punctuation">)</span>
-
-    <span class="token comment"># Warte auf den Spieler, den Code zu schreiben und zu testen</span>
-    <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Drücke Enter, wenn du den Code geschrieben und getestet hast..."</span><span class="token punctuation">)</span>
-
-    <span class="token comment"># Markiere das Level als abgeschlossen</span>
+    level_number <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>level_number<span class="token punctuation">)</span>  <span class="token comment"># Konvertiere level_number in eine Ganzzahl</span>
     language <span class="token operator">=</span> determine_language_for_level<span class="token punctuation">(</span>level_number<span class="token punctuation">)</span>
-    mark_level_completed<span class="token punctuation">(</span>language<span class="token punctuation">,</span> level_number<span class="token punctuation">)</span>
+    instructions_path <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"levels/level</span><span class="token interpolation"><span class="token punctuation">{</span>level_number<span class="token punctuation">}</span></span><span class="token string">/instructions.md"</span></span>
+
+    <span class="token keyword keyword-try">try</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-with">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>instructions_path<span class="token punctuation">)</span> <span class="token keyword keyword-as">as</span> f<span class="token punctuation">:</span>
+            instructions <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>instructions<span class="token punctuation">)</span>
+
+        <span class="token keyword keyword-if">if</span> language <span class="token operator">==</span> <span class="token string">"Python"</span><span class="token punctuation">:</span>
+            task_path <span class="token operator">=</span> <span class="token string-interpolation"><span class="token string">f"levels/level</span><span class="token interpolation"><span class="token punctuation">{</span>level_number<span class="token punctuation">}</span></span><span class="token string">/task.py"</span></span>
+            os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"python </span><span class="token interpolation"><span class="token punctuation">{</span>task_path<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+            <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Führe 'make clean' für Level </span><span class="token interpolation"><span class="token punctuation">{</span>level_number<span class="token punctuation">}</span></span><span class="token string"> aus..."</span></span><span class="token punctuation">)</span>
+            subprocess<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"make"</span><span class="token punctuation">,</span> <span class="token string">"-C"</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"levels/level</span><span class="token interpolation"><span class="token punctuation">{</span>level_number<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> <span class="token string">"clean"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> check<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+            <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Führe 'make' für Level </span><span class="token interpolation"><span class="token punctuation">{</span>level_number<span class="token punctuation">}</span></span><span class="token string"> aus..."</span></span><span class="token punctuation">)</span>
+            subprocess<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"make"</span><span class="token punctuation">,</span> <span class="token string">"-C"</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"levels/level</span><span class="token interpolation"><span class="token punctuation">{</span>level_number<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span> check<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+            <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Führe 'make run' für Level </span><span class="token interpolation"><span class="token punctuation">{</span>level_number<span class="token punctuation">}</span></span><span class="token string"> aus..."</span></span><span class="token punctuation">)</span>
+
+            <span class="token comment"># Öffne ein Pseudo-Terminal für Benutzereingaben</span>
+            p <span class="token operator">=</span> subprocess<span class="token punctuation">.</span>Popen<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"make"</span><span class="token punctuation">,</span> <span class="token string">"-C"</span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"levels/level</span><span class="token interpolation"><span class="token punctuation">{</span>level_number<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> <span class="token string">"run"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> stdin<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>PIPE<span class="token punctuation">,</span> stdout<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>PIPE<span class="token punctuation">,</span> stderr<span class="token operator">=</span>subprocess<span class="token punctuation">.</span>PIPE<span class="token punctuation">,</span> text<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+            <span class="token keyword keyword-if">if</span> level_number <span class="token operator">==</span> <span class="token number">4</span> <span class="token keyword keyword-or">or</span> level_number <span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">:</span>
+                <span class="token comment"># Lese Benutzereingaben für Level 4 und 5</span>
+                eingabe1 <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Gib die erste Zahl ein: "</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\n"</span>
+                eingabe2 <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Gib die zweite Zahl ein: "</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"\n"</span>
+                user_input <span class="token operator">=</span> eingabe1 <span class="token operator">+</span> eingabe2
+                stdout<span class="token punctuation">,</span> stderr <span class="token operator">=</span> p<span class="token punctuation">.</span>communicate<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token operator">=</span>user_input<span class="token punctuation">)</span>
+            <span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+                stdout<span class="token punctuation">,</span> stderr <span class="token operator">=</span> p<span class="token punctuation">.</span>communicate<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+            <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>stdout<span class="token punctuation">)</span>
+            <span class="token keyword keyword-if">if</span> p<span class="token punctuation">.</span>returncode <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Fehler beim Ausführen von Level </span><span class="token interpolation"><span class="token punctuation">{</span>level_number<span class="token punctuation">}</span></span><span class="token string">: </span><span class="token interpolation"><span class="token punctuation">{</span>stderr<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+        <span class="token comment"># Markiere das Level als abgeschlossen</span>
+        mark_level_completed<span class="token punctuation">(</span>language<span class="token punctuation">,</span> level_number<span class="token punctuation">)</span>
+
+    <span class="token keyword keyword-except">except</span> FileNotFoundError<span class="token punctuation">:</span>
+        <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Level </span><span class="token interpolation"><span class="token punctuation">{</span>level_number<span class="token punctuation">}</span></span><span class="token string"> nicht gefunden."</span></span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-except">except</span> subprocess<span class="token punctuation">.</span>CalledProcessError <span class="token keyword keyword-as">as</span> e<span class="token punctuation">:</span>
+        <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Fehler beim Ausführen des Make-Befehls: </span><span class="token interpolation"><span class="token punctuation">{</span>e<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-except">except</span> Exception <span class="token keyword keyword-as">as</span> e<span class="token punctuation">:</span>
+        <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Ein Fehler ist aufgetreten: </span><span class="token interpolation"><span class="token punctuation">{</span>e<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
 
 <span class="token keyword keyword-def">def</span> <span class="token function">determine_language_for_level</span><span class="token punctuation">(</span>level_number<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword keyword-if">if</span> <span class="token number">1</span> <span class="token operator">&lt;=</span> level_number <span class="token operator">&lt;=</span> <span class="token number">3</span><span class="token punctuation">:</span>
@@ -142,7 +173,7 @@ PROGRESS_FILE <span class="token operator">=</span> <span class="token string">"
 <span class="token keyword keyword-if">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
     main<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre><h2 id="zusammenfassung">Zusammenfassung </h2>
-<p>Mit diesen Schritten hast du eine Fortschrittsanzeige und eine Möglichkeit zum Speichern und Laden des Spielerfortschritts in einer JSON-Datei implementiert. Spieler können nun ihren Fortschritt sehen und wissen, welche Levels sie bereits abgeschlossen haben und welche noch ausstehen.</p>
+<p>Mit diesen Schritten hast du eine Fortschrittsanzeige und eine Möglichkeit zum Speichern und Laden des Spielerfortschritts in einer JSON-Datei implementiert. Spieler können nun ihren Fortschritt sehen und wissen, welche Levels sie bereits abgeschlossen haben und welche noch ausstehen. Das Skript berücksichtigt Benutzereingaben während der Ausführung der C++-Levels und markiert abgeschlossene Levels im Fortschrittsdatensatz.</p>
 
       </div>
       

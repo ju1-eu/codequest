@@ -1,6 +1,6 @@
 # Schritt 1: Struktur des Fortschrittsdatensatzes
 
-Zuerst definieren wir die Struktur des JSON-Datensatzes, der den Fortschritt eines Spielers speichert.
+Zuerst definieren wir die Struktur des JSON-Datensatzes, der den Fortschritt eines Spielers speichert. `progress.json`
 
 ```json
 {
@@ -17,7 +17,7 @@ Zuerst definieren wir die Struktur des JSON-Datensatzes, der den Fortschritt ein
 
 ## Schritt 2: Speichern des Fortschritts in einer JSON-Datei
 
-Erstelle eine Python-Datei `progress.py`, die Funktionen zum Laden und Speichern des Fortschritts enthält.
+Erstelle eine Python-Datei `progress.py`, die Funktionen zum Laden und Speichern des Fortschritts enthält:
 
 ```python
 import json
@@ -64,29 +64,60 @@ def set_player_name(name):
 
 ## Schritt 3: Integration der Fortschrittsanzeige ins Spiel
 
-Integriere die Fortschrittsanzeige und das Markieren abgeschlossener Levels in dein Hauptspielskript `game.py`.
+Integriere die Fortschrittsanzeige und das Markieren abgeschlossener Levels in dein Hauptspielskript `game.py`:
 
 ```python
 import os
+import subprocess
 from progress import load_progress, save_progress, mark_level_completed, display_progress, set_player_name
 
 def load_level(level_number):
-    # Lade die Anweisungen für das Level
-    instructions_file = f"levels/level{level_number}/instructions.md"
-    if not os.path.exists(instructions_file):
-        print(f"Level {level_number} nicht gefunden.")
-        return
-
-    with open(instructions_file) as f:
-        instructions = f.read()
-    print(instructions)
-
-    # Warte auf den Spieler, den Code zu schreiben und zu testen
-    input("Drücke Enter, wenn du den Code geschrieben und getestet hast...")
-
-    # Markiere das Level als abgeschlossen
+    level_number = int(level_number)  # Konvertiere level_number in eine Ganzzahl
     language = determine_language_for_level(level_number)
-    mark_level_completed(language, level_number)
+    instructions_path = f"levels/level{level_number}/instructions.md"
+
+    try:
+        with open(instructions_path) as f:
+            instructions = f.read()
+        print(instructions)
+
+        if language == "Python":
+            task_path = f"levels/level{level_number}/task.py"
+            os.system(f"python {task_path}")
+        else:
+            print(f"Führe 'make clean' für Level {level_number} aus...")
+            subprocess.run(["make", "-C", f"levels/level{level_number}", "clean"], check=True)
+
+            print(f"Führe 'make' für Level {level_number} aus...")
+            subprocess.run(["make", "-C", f"levels/level{level_number}"], check=True)
+
+            print(f"Führe 'make run' für Level {level_number} aus...")
+
+            # Öffne ein Pseudo-Terminal für Benutzereingaben
+            p = subprocess.Popen(["make", "-C", f"levels/level{level_number}", "run"], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+            if level_number == 4 or level_number == 5:
+                # Lese Benutzereingaben für Level 4 und 5
+                eingabe1 = input("Gib die erste Zahl ein: ") + "\n"
+                eingabe2 = input("Gib die zweite Zahl ein: ") + "\n"
+                user_input = eingabe1 + eingabe2
+                stdout, stderr = p.communicate(input=user_input)
+            else:
+                stdout, stderr = p.communicate()
+
+            print(stdout)
+            if p.returncode != 0:
+                print(f"Fehler beim Ausführen von Level {level_number}: {stderr}")
+
+        # Markiere das Level als abgeschlossen
+        mark_level_completed(language, level_number)
+
+    except FileNotFoundError:
+        print(f"Level {level_number} nicht gefunden.")
+    except subprocess.CalledProcessError as e:
+        print(f"Fehler beim Ausführen des Make-Befehls: {e}")
+    except Exception as e:
+        print(f"Ein Fehler ist aufgetreten: {e}")
 
 def determine_language_for_level(level_number):
     if 1 <= level_number <= 3:
@@ -132,4 +163,4 @@ if __name__ == "__main__":
 
 ## Zusammenfassung
 
-Mit diesen Schritten hast du eine Fortschrittsanzeige und eine Möglichkeit zum Speichern und Laden des Spielerfortschritts in einer JSON-Datei implementiert. Spieler können nun ihren Fortschritt sehen und wissen, welche Levels sie bereits abgeschlossen haben und welche noch ausstehen.
+Mit diesen Schritten hast du eine Fortschrittsanzeige und eine Möglichkeit zum Speichern und Laden des Spielerfortschritts in einer JSON-Datei implementiert. Spieler können nun ihren Fortschritt sehen und wissen, welche Levels sie bereits abgeschlossen haben und welche noch ausstehen. Das Skript berücksichtigt Benutzereingaben während der Ausführung der C++-Levels und markiert abgeschlossene Levels im Fortschrittsdatensatz.

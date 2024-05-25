@@ -1,0 +1,18 @@
+{
+    "player_name": "Jan Unger",
+    "completed_levels": {
+        "Python": [
+            1,
+            2,
+            3
+        ],
+        "C++": [
+            4,
+            5,
+            6
+        ],
+        "Algorithms": [],
+        "Struktogramme": [],
+        "Projects": []
+    }
+}

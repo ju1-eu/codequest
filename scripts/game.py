@@ -6,11 +6,11 @@ Ein Testskript (test_levels.py) ermöglicht das Testen der Aufgaben.
 """
 import os
 import subprocess
+from progress import load_progress, save_progress, mark_level_completed, display_progress, set_player_name
 
 def load_level(level_number):
     level_number = int(level_number)  # Konvertiere level_number in eine Ganzzahl
-    language = 'python' if level_number <= 3 else 'cpp'
-
+    language = determine_language_for_level(level_number)
     instructions_path = f"levels/level{level_number}/instructions.md"
 
     try:
@@ -18,7 +18,7 @@ def load_level(level_number):
             instructions = f.read()
         print(instructions)
 
-        if language == 'python':
+        if language == "Python":
             task_path = f"levels/level{level_number}/task.py"
             os.system(f"python {task_path}")
         else:
@@ -46,6 +46,9 @@ def load_level(level_number):
             if p.returncode != 0:
                 print(f"Fehler beim Ausführen von Level {level_number}: {stderr}")
 
+        # Markiere das Level als abgeschlossen
+        mark_level_completed(language, level_number)
+
     except FileNotFoundError:
         print(f"Level {level_number} nicht gefunden.")
     except subprocess.CalledProcessError as e:
@@ -53,16 +56,43 @@ def load_level(level_number):
     except Exception as e:
         print(f"Ein Fehler ist aufgetreten: {e}")
 
+def determine_language_for_level(level_number):
+    if 1 <= level_number <= 3:
+        return "Python"
+    elif 4 <= level_number <= 6:
+        return "C++"
+    elif 7 <= level_number <= 12:
+        return "Algorithms"
+    elif 13 <= level_number <= 18:
+        return "Struktogramme"
+    elif 19 <= level_number <= 24:
+        return "Projects"
+    return "Unknown"
+
 def main():
+    progress = load_progress()
+    if not progress["player_name"]:
+        name = input("Bitte gib deinen Spielernamen ein: ")
+        set_player_name(name)
     print("Willkommen bei CodeQuest Terminal Edition!")
     while True:
-        level_number = input("Wähle ein Level (oder 'exit' zum Beenden): ")
-        if level_number.lower() == 'exit':
+        print("\n1. Wähle ein Level")
+        print("2. Zeige Fortschritt")
+        print("3. Beende das Spiel")
+        choice = input("Wähle eine Option: ")
+
+        if choice == "1":
+            level_number = input("Wähle ein Level: ")
+            if level_number.isdigit():
+                load_level(int(level_number))
+            else:
+                print("Ungültige Eingabe. Bitte gib eine Zahl ein.")
+        elif choice == "2":
+            display_progress()
+        elif choice == "3":
             break
-        if level_number.isdigit() and int(level_number) in range(1, 7):
-            load_level(level_number)
         else:
-            print("Level nicht gefunden. Bitte versuche es erneut.")
+            print("Ungültige Wahl. Bitte versuche es erneut.")
 
 if __name__ == "__main__":
     main()
