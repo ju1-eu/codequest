@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>Git-Projekt</title>
+      <title>Git-Konfiguration-anpassen</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -24,123 +24,59 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="git-versionskontrollsystem">Git (Versionskontrollsystem) </h1>
-<h2 id="schritt-1-git-repository-initialisieren">Schritt 1: Git-Repository initialisieren </h2>
-<p>Zuerst musst du ein Git-Repository für dein Projekt initialisieren.</p>
+<h1 id="git-konfiguration-anpassen">Git-Konfiguration anpassen </h1>
+<p>Die Warnungen von Git, weisen darauf hin, dass die Zeilenenden in einigen Dateien von CRLF (Carriage Return Line Feed, verwendet unter Windows) zu LF (Line Feed, verwendet unter Unix/Linux und macOS) geändert werden. Dies passiert häufig, wenn du auf verschiedenen Betriebssystemen arbeitest, da diese unterschiedliche Zeilenendungen verwenden.</p>
+<p>Um sicherzustellen, dass alle Dateien in deinem Projekt korrekt behandelt werden, kannst du die <code>.gitattributes</code>-Datei erweitern, um spezifische Regeln für die verschiedenen Dateitypen wie Markdown (<code>.md</code>), Python (<code>.py</code>), C++ (<code>.cpp</code>), und JSON (<code>.json</code>) festzulegen.</p>
 <ol>
-<li>Öffne das Terminal und navigiere zu deinem Projektverzeichnis.</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token builtin class-name">cd</span> /Users/jan/daten/start/Programmierung/Projekte/codequest
-</code></pre><ol start="2">
-<li>Initialisiere ein neues Git-Repository.</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> init
-</code></pre><h2 id="schritt-2-gitignore-datei-erstellen">Schritt 2: .gitignore-Datei erstellen </h2>
-<p>Erstelle eine <code>.gitignore</code>-Datei, um Dateien und Verzeichnisse auszuschließen, die nicht versioniert werden sollen, z.B. Kompilierungsartefakte und temporäre Dateien.</p>
-<p><strong>Datei: .gitignore</strong></p>
-<pre data-role="codeBlock" data-info="plaintext" class="language-plaintext plaintext"><code># Python Bytecode
-__pycache__/
-*.pyc
+<li>
+<p><strong>Erstelle oder bearbeite die <code>.gitattributes</code>-Datei</strong> in deinem Projektverzeichnis:</p>
+<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">touch</span> .gitattributes
+</code></pre></li>
+<li>
+<p><strong>Füge die folgenden Zeilen zu <code>.gitattributes</code> hinzu</strong>:</p>
+<pre data-role="codeBlock" data-info="plaintext" class="language-plaintext plaintext"><code># Set default behavior, in case users don't have core.autocrlf set.
+* text=auto
 
-# C++ Build Files
-levels/level*/task.out
+# Explicitly declare text files you want to always be normalized and converted to LF in the repository
+*.md text eol=lf
+*.py text eol=lf
+*.cpp text eol=lf
+*.json text eol=lf
 
-# VSCode Settings
-.vscode/
+# Declare files that will always have CRLF line endings on checkout.
+*.bat text eol=crlf
 
-# Other
-*.o
-*.exe
-*.log
-</code></pre><h2 id="schritt-3-erste-dateien-hinzufügen-und-commit-erstellen">Schritt 3: Erste Dateien hinzufügen und Commit erstellen </h2>
-<ol>
-<li>Füge alle relevanten Dateien zum Repository hinzu.</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
-</code></pre><ol start="2">
-<li>Erstelle deinen ersten Commit.</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Initial commit: Projektstruktur und erste Level hinzugefügt"</span>
-</code></pre><h2 id="schritt-4-branching-und-feature-entwicklung">Schritt 4: Branching und Feature-Entwicklung </h2>
-<p>Git-Branching ermöglicht es dir, neue Features oder Änderungen in isolierten Umgebungen zu entwickeln, bevor du sie in den Hauptzweig integrierst.</p>
-<ol>
-<li>Erstelle einen neuen Branch für ein neues Feature oder eine Änderung.</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> checkout <span class="token parameter variable">-b</span> feature/level4-6
-</code></pre><ol start="2">
-<li>
-<p>Entwickle dein Feature oder nimm Änderungen vor.</p>
+# Declare files that will always have LF line endings on checkout.
+*.sh text eol=lf
+</code></pre><p>Diese <code>.gitattributes</code>-Datei stellt sicher, dass die angegebenen Dateitypen immer LF-Zeilenendungen im Repository haben.</p>
 </li>
 <li>
-<p>Füge die Änderungen hinzu und erstelle einen Commit.</p>
-</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
-<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Feature: Level 4-6 hinzugefügt"</span>
-</code></pre><ol start="4">
-<li>Wechsel zurück zum Hauptzweig und integriere die Änderungen.</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> checkout main
-<span class="token function">git</span> merge feature/level4-6
-</code></pre><ol start="5">
-<li>Lösche den Feature-Branch, wenn er nicht mehr benötigt wird.</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> branch <span class="token parameter variable">-d</span> feature/level4-6
-</code></pre><h2 id="schritt-5-zusammenarbeit-mit-anderen-remote-repository">Schritt 5: Zusammenarbeit mit anderen (Remote Repository) </h2>
-<p>Um mit anderen Entwicklern zusammenzuarbeiten oder deine Arbeit zu sichern, kannst du ein Remote-Repository (z.B. auf GitHub) verwenden.</p>
-<ol>
-<li>
-<p>Erstelle ein Repository auf GitHub (oder einer anderen Plattform).</p>
-</li>
-<li>
-<p>Füge das Remote-Repository zu deinem lokalen Repository hinzu.</p>
-</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> remote <span class="token function">add</span> origin https://github.com/username/codequest.git
-</code></pre><ol start="3">
-<li>Schiebe deinen lokalen Code zum Remote-Repository.</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> push <span class="token parameter variable">-u</span> origin main
-</code></pre><h2 id="schritt-6-änderungen-von-anderen-abrufen-und-integrieren">Schritt 6: Änderungen von anderen abrufen und integrieren </h2>
-<p>Wenn du mit anderen zusammenarbeitest, möchtest du regelmäßig Änderungen vom Remote-Repository abrufen und integrieren.</p>
-<ol>
-<li>Hole die neuesten Änderungen vom Remote-Repository.</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> pull origin main
-</code></pre><h2 id="schritt-7-fortgeschrittene-techniken">Schritt 7: Fortgeschrittene Techniken </h2>
-<ol>
-<li><strong>Stash</strong>: Temporäre Änderungen speichern und später anwenden.</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> stash
-<span class="token comment"># Änderungen anwenden</span>
-<span class="token function">git</span> stash pop
-</code></pre><ol start="2">
-<li><strong>Rebase</strong>: Änderungen auf einen neuen Basis-Commit anwenden.</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> rebase main
-</code></pre><ol start="3">
-<li><strong>Tags</strong>: Versionsmarkierungen erstellen.</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> tag <span class="token parameter variable">-a</span> v1.0 <span class="token parameter variable">-m</span> <span class="token string">"Version 1.0"</span>
-<span class="token function">git</span> push origin v1.0
-</code></pre><h2 id="schritt-8-konflikte-lösen">Schritt 8: Konflikte lösen </h2>
-<p>Bei der Zusammenführung von Branches können Konflikte auftreten. Git zeigt an, wo die Konflikte sind, und du musst diese manuell lösen.</p>
-<ol>
-<li>Öffne die Dateien mit Konflikten.</li>
-<li>Suche nach den Markierungen <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code> und <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> und wähle die gewünschten Änderungen.</li>
-<li>Entferne die Markierungen und speichere die Datei.</li>
-<li>Füge die Datei erneut hinzu und erstelle einen Commit.</li>
-</ol>
-<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> <span class="token function">add</span> conflict_file.py
-<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Konflikte gelöst"</span>
-</code></pre><h2 id="zusammenfassung">Zusammenfassung </h2>
-<p>Durch die Nutzung von Git in deinem Projekt kannst du:</p>
+<p><strong>Setze die Git-Konfiguration, um die Zeilenendungen zu konvertieren</strong>:</p>
 <ul>
-<li>Änderungen verfolgen und die Entwicklungsgeschichte dokumentieren.</li>
-<li>In isolierten Branches neue Features entwickeln.</li>
-<li>Effizient mit anderen Entwicklern zusammenarbeiten.</li>
-<li>Änderungen und Konflikte leicht verwalten.</li>
+<li>Auf macOS solltest du die <code>core.autocrlf</code>-Einstellung auf <code>input</code> setzen, damit Git nur beim Einfügen von Dateien ins Repository die Zeilenendungen in LF konvertiert:</li>
 </ul>
+<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf input
+</code></pre></li>
+<li>
+<p><strong>Füge die <code>.gitattributes</code>-Datei hinzu und committe sie</strong>:</p>
+<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> <span class="token function">add</span> .gitattributes
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Add .gitattributes to handle line endings for specific file types"</span>
+</code></pre></li>
+<li>
+<p><strong>Normalisiere die Zeilenendungen der Dateien</strong>:</p>
+<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">--renormalize</span> <span class="token builtin class-name">.</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Normalize all line endings"</span>
+</code></pre></li>
+<li>
+<p><strong>Überprüfe die Git-Konfiguration</strong>:</p>
+<ul>
+<li>Stelle sicher, dass die globale und lokale Git-Konfiguration korrekt eingestellt ist:</li>
+</ul>
+<pre data-role="codeBlock" data-info="sh" class="language-bash sh"><code><span class="token function">git</span> config <span class="token parameter variable">--global</span> core.eol lf
+<span class="token function">git</span> config core.eol lf
+<span class="token function">git</span> config core.autocrlf input
+</code></pre></li>
+</ol>
 
       </div>
       
