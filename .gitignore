@@ -1,0 +1,14 @@
+# Python Bytecode
+__pycache__/
+*.pyc
+
+# C++ Build Files
+levels/level*/task.out
+
+# VSCode Settings
+.vscode/
+
+# Other
+*.o
+*.exe
+*.log
