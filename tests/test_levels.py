@@ -8,7 +8,7 @@ def run_test(level):
 
     if file_extension == 'py':
         command = ["python", f"levels/level{level}/task.py"]
-        if level in [1, 2]:  # Levels, die Benutzereingaben erfordern
+        if level in [1, 2, 13, 14, 15, 16, 17, 18]:  # Levels, die Benutzereingaben erfordern
             input_data = "2\n3\n"  # Beispiel-Eingaben
             result = subprocess.run(command, input=input_data, capture_output=True, text=True, timeout=300)  # Timeout erhöht auf 300 Sekunden
         else:
@@ -31,7 +31,7 @@ def run_test(level):
         print(f"Führe 'make run' für Level {level} aus...")
         command = ["make", "-C", f"levels/level{level}", "run"]
 
-        if level in [4, 5]:  # Levels, die Benutzereingaben erfordern
+        if level in [4, 5, 13, 14, 15, 16, 17, 18]:  # Levels, die Benutzereingaben erfordern
             input_data = "2\n3\n"  # Beispiel-Eingaben
             result = subprocess.run(command, input=input_data, capture_output=True, text=True, timeout=300)  # Timeout erhöht auf 300 Sekunden
         else:
@@ -44,7 +44,11 @@ def run_test(level):
     if level >= 7:  # Auch die Python-Dateien für Levels ab 7 ausführen
         command = ["python", f"levels/level{level}/task.py"]
         print(f"Ausgabe von Python für Level {level}:")
-        result = subprocess.run(command, capture_output=True, text=True, timeout=300)  # Timeout erhöht auf 300 Sekunden
+        if level in [13, 14, 15, 16, 17, 18]:  # Levels, die Benutzereingaben erfordern
+            input_data = "2\n3\n"  # Beispiel-Eingaben
+            result = subprocess.run(command, input=input_data, capture_output=True, text=True, timeout=300)  # Timeout erhöht auf 300 Sekunden
+        else:
+            result = subprocess.run(command, capture_output=True, text=True, timeout=300)  # Timeout erhöht auf 300 Sekunden
         print(result.stdout)
         if result.returncode != 0:
             print(f"Fehler beim Ausführen von Python für Level {level}: {result.stderr}")
@@ -65,7 +69,7 @@ def determine_language_for_level(level_number):
     return "Unknown"
 
 def main():
-    for level in range(1, 13):
+    for level in range(1, 19):  # Bis Level 18 erweitern
         if not run_test(level):
             print(f"Level {level} Test fehlgeschlagen.")
         else:

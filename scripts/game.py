@@ -43,7 +43,7 @@ def load_level(level_number):
             else:
                 mark_level_completed("C++", level_number)
 
-        elif 7 <= level_number <= 12:  # Python und C++ für Levels ab 7
+        elif 7 <= level_number <= 12:  # Python und C++ für Levels 7-12
             task_path_py = f"levels/level{level_number}/task.py"
             print(f"Ausgabe von Python für Level {level_number}:")
             os.system(f"python {task_path_py}")
